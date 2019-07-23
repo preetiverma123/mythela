@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>My Thela</title>
+  <title>Ogonn</title>
   <link rel="shortcut icon" href="img/fav.png" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <script src="https://www.google.com/recaptcha/api.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/mythela.css">
+<link rel="stylesheet" href="css/style.css">
 <link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -86,7 +86,7 @@
         <div class="col-md-8 hidden-sm hidden-xs right-desk4 right-desk-gen">
           <div class="right-desk-content2">
             <h2 class="white">Admin Login</h2>
-            # My Thela Admin
+            # Ogonn Admin
           </div>
         </div>
       </div>

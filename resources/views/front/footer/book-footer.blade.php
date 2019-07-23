@@ -6,7 +6,7 @@
 <div class="col-md-8 hidden-sm hidden-xs right-desk2 right-desk-gen">
    <div class="right-desk-content">
        <h3 class="white">We are always ready to help you.</h3>
-       # My Thela For Web
+       # Ogonn For Web
    </div>
 </div>
 </div>

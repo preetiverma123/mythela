@@ -75,7 +75,7 @@
                   <th>Profile Pic</th>
                   <td>
                     @if(@$ulist->profile_pic)
-                    <img width="100" src="{{'https://mythela.com/img/users-pic/'.@$ulist->profile_pic}}">
+                    <img width="100" src="{{'https://ogonn.com/img/users-pic/'.@$ulist->profile_pic}}">
                     @else 
                     <img class="img-circle" width="100" src="https://vignette.wikia.nocookie.net/sote-rp/images/c/c4/User-placeholder.png">
                     @endif
@@ -89,7 +89,7 @@
                   <th>Address proof-front</th>
                   <td>
                     @if(@$photolist->address_prof_front)
-                    <img  width="200px" src="{{'https://mythela.com/img/document-info/'.@$photolist->address_prof_front}}">
+                    <img  width="200px" src="{{'https://ogonn.com/img/document-info/'.@$photolist->address_prof_front}}">
                     @else 
                     N/A 
                     @endif
@@ -99,7 +99,7 @@
                   <th>Address proof-back</th>
                   <td>
                     @if(@$photolist->address_prof_back)
-                    <img  width="200px" src="{{'https://mythela.com/img/document-info/'.@$photolist->address_prof_back}}">
+                    <img  width="200px" src="{{'https://ogonn.com/img/document-info/'.@$photolist->address_prof_back}}">
                     @else 
                     N/A 
                     @endif
@@ -109,7 +109,7 @@
                   <th>Pancard front</th>
                   <td>
                     @if(@$photolist->pancard_front)
-                    <img  width="200px" src="{{'https://mythela.com/img/document-info/'.@$photolist->pancard_front}}">
+                    <img  width="200px" src="{{'https://ogonn.com/img/document-info/'.@$photolist->pancard_front}}">
                     @else 
                     N/A 
                     @endif
@@ -119,7 +119,7 @@
                   <th>Dl front</th>
                   <td>
                     @if(@$photolist->commercial_dl_front)
-                    <img  width="200px" src="{{'https://mythela.com/img/document-info/'.@$photolist->commercial_dl_front}}">
+                    <img  width="200px" src="{{'https://ogonn.com/img/document-info/'.@$photolist->commercial_dl_front}}">
                     @else 
                     N/A 
                     @endif
@@ -129,7 +129,7 @@
                   <th>Dl back</th>
                   <td>
                     @if(@$photolist->commercial_dl_back)
-                    <img  width="200px" src="{{'https://mythela.com/img/document-info/'.@$photolist->commercial_dl_back}}">
+                    <img  width="200px" src="{{'https://ogonn.com/img/document-info/'.@$photolist->commercial_dl_back}}">
                     @else 
                     N/A 
                     @endif
@@ -139,7 +139,7 @@
                   <th>Bank passbook</th>
                   <td>
                     @if(@$photolist->bank_passbook)
-                    <img  width="200px" src="{{'https://mythela.com/img/document-info/'.@$photolist->bank_passbook}}">
+                    <img  width="200px" src="{{'https://ogonn.com/img/document-info/'.@$photolist->bank_passbook}}">
                     @else 
                     N/A 
                     @endif
@@ -149,7 +149,7 @@
                   <th>Police verification</th>
                   <td>
                     @if(@$photolist->police_verification)
-                    <img  width="200px" src="{{'https://mythela.com/img/document-info/'.@$photolist->police_verification}}">
+                    <img  width="200px" src="{{'https://ogonn.com/img/document-info/'.@$photolist->police_verification}}">
                     @else 
                     N/A 
                   @endif</td>

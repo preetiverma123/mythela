@@ -29,7 +29,7 @@
         <div class="box-body">
           <table class="table table-bordered u-detail">
              <tr>
-              <td colspan="2"><img src="http://control.mythela.com/public/dash-lib/dist/img/user2-160x160.jpg" height="60px" class="img-circle"></td>
+              <td colspan="2"><img src="http://control.ogonn.com/public/dash-lib/dist/img/user2-160x160.jpg" height="60px" class="img-circle"></td>
             </tr>
             <tr>
               <th>Fullname</th>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>MyThela Admin | Dashboard</title>
+  <title>Ogonn Admin | Dashboard</title>
   <link rel="shortcut icon" href="{{asset('dash-lib/dist/img/fav.png')}}" />
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -39,7 +39,7 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,30
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><img class="thela-logo" src="{{asset('dash-lib/dist/img/fav.png')}}"></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>MyThela</b>Admin</span>
+        <span class="logo-lg"><b>Ogonn</b> Admin</span>
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -61,7 +61,7 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,30
                   <img src="{{asset('dash-lib/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                   <p>
                     {{Auth::user()['first_name']}} {{Auth::user()['last_name']}}
-                    <small>mythela.com</small>
+                    <small>OGonn.com</small>
                   </p>
                 </li>
                 <!-- Menu Footer-->

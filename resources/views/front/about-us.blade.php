@@ -32,7 +32,7 @@
                     </ol>
                     <h3>Our Fleet</h3>
                     <p class="text-justify">Our fleet plan is very simple and new way for freight planning for transporter carrier agent and broker.
-</p><p class="text-justify">Bidding process follow-up on mythela that working very smooth and better for both user and vendor as per my concern vendors can put appropriate freight charges for particulars that shown  booking screen then user get so many request select one of them
+</p><p class="text-justify">Bidding process follow-up on Ogonn that working very smooth and better for both user and vendor as per my concern vendors can put appropriate freight charges for particulars that shown  booking screen then user get so many request select one of them
 </p>
 <h3>Tracking</h3>
 <p class="text-justify">The solution offers the ability to dispatch in real-time. Dispatch can be automated or handled manually. Only vehicles who are logged in and free can receive a trip. Trips appear on the map and locate current running position.
@@ -59,7 +59,7 @@
             <!--<br/>-->
             <div class="row text-center">
                 <div class="col-md-12">
-                    <h2>People Behind My Thela</h2>
+                    <h2>People Behind Ogonn</h2>
             
             <img src="img/ul.png" width="50%">
             <br/><br/>
@@ -105,7 +105,7 @@
                         <div class="col-xs-2 text-center"><img src="img/about3.svg"></div>
                         <div class="col-xs-10">
                             <h4 style="margin-top: 0px;margin-bottom: 3px;">110+</h4>
-                            <p class="para">Cities serviced by the My Thela fleet to get you to your destination on time, every time</p>
+                            <p class="para">Cities serviced by the Ogonn fleet to get you to your destination on time, every time</p>
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                         <div class="col-xs-2 text-center"><img src="img/about4.svg"></div>
                         <div class="col-xs-10">
                             <h4 style="margin-top: 0px;margin-bottom: 3px;">6,00,000+</h4>
-                            <p class="para">A million empowered entrepreneurs as driver-partners are on the platform with My Thela</p>
+                            <p class="para">A million empowered entrepreneurs as driver-partners are on the platform with Ogonn</p>
                         </div>
                     </div>
                 </div>

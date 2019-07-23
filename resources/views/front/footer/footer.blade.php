@@ -27,7 +27,7 @@
 		</div>
 	</div>
 	<hr/>
-	<p class="text-center">Copyright &copy; 2019 My Thela. All Rights Reserved. </p> 
+	<p class="text-center">Copyright &copy; 2019 Ogonn. All Rights Reserved. </p> 
 </footer>
 </body>
 </html>

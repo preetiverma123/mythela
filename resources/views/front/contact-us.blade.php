@@ -13,7 +13,7 @@
                         <div class="col-xs-2 text-center"><img src="img/customer-support.svg" width="100%"></div>
                         <div class="col-xs-10">
                             <h4>CUSTOMER SUPPORT</h4>
-                            <p class="para">If you have any concerns, please report your issues with My Thela at support@mythela.com</p>
+                            <p class="para">If you have any concerns, please report your issues with Ogonn at support@ogonn.com</p>
                         </div>
                     </div>
                 
@@ -23,7 +23,7 @@
                         <div class="col-xs-2 text-center"><img src="img/media.svg" width="83%"></div>
                         <div class="col-xs-10">
                             <h4>MEDIA RELATED QUERIES</h4>
-                            <p class="para">If you have any media related concerns, please report your issues with My Thela at admin@mythela.com</p>
+                            <p class="para">If you have any media related concerns, please report your issues with Ogonn at admin@ogonn.com</p>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                         <div class="col-xs-2 text-center"><img src="img/security.svg" width="90%"></div>
                         <div class="col-xs-10">
                             <h4>CUSTOMER SECURITY</h4>
-                            <p class="para">If you have security concerns, please report your issues  with My Thela at security@mythela.com</p>
+                            <p class="para">If you have security concerns, please report your issues  with Ogonn at security@ogonn.com</p>
                         </div>
                     </div>
                 </div>
@@ -43,8 +43,8 @@
                     <div class="row">
                         <div class="col-xs-2 text-center"><img src="img/drive.svg" width="100%"></div>
                         <div class="col-xs-10">
-                            <h4>MYTHELA PARTNER SUPPORT</h4>
-                            <p class="para">If you are a MyThela PARTNER, please report your issues  with us at admin@mythela.com</p>
+                            <h4>OGONN PARTNER SUPPORT</h4>
+                            <p class="para">If you are a Ogonn PARTNER, please report your issues  with us at admin@ogonn.com</p>
                         </div>
                     </div>
                 </div>
@@ -57,10 +57,10 @@
                     <h3>Helpline : 0522 XXXXXXXX</h3>
                  </div>
                 <div class="col-md-4">
-                   <a class="twitter-timeline" data-height="450" data-link-color="#2B7BB9" href="https://twitter.com/mythela?ref_src=twsrc%5Etfw">Tweets by MyThela</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                   <a class="twitter-timeline" data-height="450" data-link-color="#2B7BB9" href="https://twitter.com/ogonn?ref_src=twsrc%5Etfw">Tweets by Ogonn</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
                 <div class="col-md-4">
-                   <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmythela&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="450" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                   <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fogonn&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="450" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                </div>
             </div>
             <br/>

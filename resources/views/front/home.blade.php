@@ -151,7 +151,7 @@ else $('.depart').hide(); // hide div if value is not "custom"
 </div>
 <div class="col-md-8 hidden-xs">
   <br/><br/>
-  <h1>My Thela | Book Now</h1> 
+  <h1>Ogonn | Book Now</h1> 
   <img src="{{asset('img/ul.png')}}" width="50%">	
   <p>Bidding Process for Minimum Fares</p>
 </div>
@@ -159,7 +159,7 @@ else $('.depart').hide(); // hide div if value is not "custom"
 </div>
 <br/>
 <div class="container bg-3 text-center">    
-  <h2>Logistics @ My Thela</h2>
+  <h2>Logistics @ Ogonn</h2>
   <p class="info">We have started the bidding process in logistics services, So that every user will choose the minimum price for their transportation. All drivers will quote minimum price for your booking, So that you can choose any of the driver you wish to confirm their bid. This is the best way you can use our services at minimum price.</p>
   <img src="{{asset('img/ul.png')}}" width="50%">
   <br/><br/>
@@ -222,7 +222,7 @@ else $('.depart').hide(); // hide div if value is not "custom"
         <img src="{{asset('img/city2.jpg')}}" width="100%">
         <h4 class="h44 text-center">OUTSTATION</h4>
         <div class="info-cont">
-          <p class="text-justify para"> Ride out of town at affordable one-way and round-trip fares with MyThela’s intercity travel service. Choose from a range of AC cabs driven by top partners, you can book upto 7 days in advance.</p>
+          <p class="text-justify para"> Ride out of town at affordable one-way and round-trip fares with Ogonn's intercity travel service. Choose from a range of AC cabs driven by top partners, you can book upto 7 days in advance.</p>
           <br/>
           <div class="row text-center">
             <div class="col-xs-12 dtt"><i class="fa fa-car tt" aria-hidden="true"></i> Advance Bookings</div>
@@ -253,7 +253,7 @@ else $('.depart').hide(); // hide div if value is not "custom"
         <img src="{{asset('img/city4.jpg')}}" width="100%">
         <h4 class="h44 text-center">RENTALS</h4>
         <div class="info-cont">
-          <p class="text-justify para"> With MyThela Rentals you get a cab at your disposal. So be it a  day long business meeting, a shopping trip or any place with your friends or just a day out in a new city, we have you covered. </p>
+          <p class="text-justify para"> With Ogonn Rentals you get a cab at your disposal. So be it a  day long business meeting, a shopping trip or any place with your friends or just a day out in a new city, we have you covered. </p>
           <br/>
           <div class="row text-center">
             <div class="col-xs-12 dtt"><i class="fa fa-map-marker tt" aria-hidden="true"></i> Multiple Destinations</div>

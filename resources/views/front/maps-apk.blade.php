@@ -155,7 +155,7 @@ function startAnimation(){
 setTimeout("animate(50)", 2000); // Allow time for the initial map display
 }
 // var icon = {
-// url: "https://mythela.com/img/truck-map.png",
+// url: "https://Ogonn.com/img/truck-map.png",
 // anchor: new google.maps.Point(39, 60),
 // scale: .7,
 // strokeColor: 'white',
