@@ -1,0 +1,325 @@
+<h6> : AVAILABLE RIDES :</h6>
+<div class="fleet-row card row">
+    <div class="col-xs-2 fl text-center"><img class="fleet-img" src="img/fleet/prime.png"><br/><div class="fleet-time">5 mins</div></div>
+    <div class="col-xs-9 fl">
+        <span class="fleet-name">Prime</span>
+        <span class="fleet-price"><i class="fa fa-inr"></i>600 - <i class="fa fa-inr"></i>660 </span><br/>
+        <span class="fleet-tag">Get an Auto at your doorstep</span>
+    </div>
+    <div class="col-xs-1 fl"><i class="fa fa-angle-right fleet-proceed-icon"></i></div>
+</div>
+<!--item-->
+<div class="fleet-row card row">
+    <div class="col-xs-2 fl text-center"><img class="fleet-img" src="img/fleet/prime-play.png"><br/><div class="fleet-time">5 mins</div></div>
+    <div class="col-xs-9 fl">
+        <span class="fleet-name">Prime Play</span>
+        <span class="fleet-price"><i class="fa fa-inr"></i>800 - <i class="fa fa-inr"></i>960 </span><br/>
+        <span class="fleet-tag">Get an Auto at your doorstep</span>
+    </div>
+    <div class="col-xs-1 fl"><i class="fa fa-angle-right fleet-proceed-icon"></i></div>
+</div>
+<!--item-->
+<div class="fleet-row card row">
+    <div class="col-xs-2 fl text-center"><img class="fleet-img" src="img/fleet/share.png"><br/><div class="fleet-time">5 mins</div></div>
+    <div class="col-xs-9 fl">
+        <span class="fleet-name">Share</span>
+        <span class="fleet-price"><i class="fa fa-inr"></i>600 - <i class="fa fa-inr"></i>660 </span><br/>
+        <span class="fleet-tag">Get an Auto at your doorstep</span>
+    </div>
+    <div class="col-xs-1 fl"><i class="fa fa-angle-right fleet-proceed-icon"></i></div>
+</div>
+<!--item-->
+<div class="fleet-row card row">
+    <div class="col-xs-2 fl text-center"><img class="fleet-img" src="img/fleet/suv.jpg"><br/><div class="fleet-time">5 mins</div></div>
+    <div class="col-xs-9 fl">
+        <span class="fleet-name">Prime SUV</span>
+        <span class="fleet-price"><i class="fa fa-inr"></i>600 - <i class="fa fa-inr"></i>660 </span><br/>
+        <span class="fleet-tag">Get an Auto at your doorstep</span>
+    </div>
+    <div class="col-xs-1 fl"><i class="fa fa-angle-right fleet-proceed-icon"></i></div>
+</div>
+<!--item-->
+<div class="fleet-row card row">
+    <div class="col-xs-2 fl text-center"><img class="fleet-img" src="img/fleet/lux.png"><br/><div class="fleet-time">5 mins</div></div>
+    <div class="col-xs-9 fl">
+        <span class="fleet-name">LUX</span>
+        <span class="fleet-price"><i class="fa fa-inr"></i>600 - <i class="fa fa-inr"></i>660 </span><br/>
+        <span class="fleet-tag">Get an Auto at your doorstep</span>
+    </div>
+    <div class="col-xs-1 fl"><i class="fa fa-angle-right fleet-proceed-icon"></i></div>
+</div>
+<!--item-->
+<div class="fleet-row card row">
+    <div class="col-xs-2 fl text-center"><img class="fleet-img" src="img/fleet/erick.jpg"><br/><div class="fleet-time">5 mins</div></div>
+    <div class="col-xs-9 fl">
+        <span class="fleet-name">eRick</span>
+        <span class="fleet-price"><i class="fa fa-inr"></i>600 - <i class="fa fa-inr"></i>660 </span><br/>
+        <span class="fleet-tag">Get an Auto at your doorstep</span>
+    </div>
+    <div class="col-xs-1 fl"><i class="fa fa-angle-right fleet-proceed-icon"></i></div>
+</div>
+</div><!-- main mobile column ends -->
+<div class="col-md-8 hidden-sm hidden-xs right-desk2 right-desk-gen">
+    <div class="right-desk-content">
+        <h3 class="white">We are always ready to help you.</h3>
+        # My Thela For Web
+    </div>
+</div>
+</div>
+</div>
+<!-- Modal -->
+<div class="modal left fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <br/><br/>
+                @if(Auth::user()) 
+                <div class="top-menu">
+                    <a href="{{route('profile')}}"><i class="fa fa-user-circle-o" aria-hidden="true"></i> My Account</a>
+                </div>
+                <div class="top-menu">
+                    <a href="mybookings.php"><i class="fa fa-cab" aria-hidden="true"></i> My Bookings</a>
+                </div>
+                <div class="top-menu">
+                    <a href="javascript:void(0);" id="logout" data-toggle="modal" data-target="#logoutModal"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</a>
+                </div>
+                 @else
+                 <div class="top-menu">
+                    <a href="{{route('auth')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                </div>
+                 @endif
+                <div class="bottom-div">
+                    <div class="row bot-row"><div class="col-xs-6 text-left"><a target="_blank" href="terms-of-service.php">Terms Of Service</a></div><div class=" col-xs-6 text-right"> &copy; 2019</div></div>
+                    <div class="dwnld-app"><i class="fa fa-download" aria-hidden="true"></i> Download App</div></div>
+                </div>
+            </div><!-- modal-content -->
+        </div><!-- modal-dialog -->
+    </div><!-- modal -->
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content modal-contenttt text-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Confirm Logout</h4>
+                </div>
+                <div class="modal-body">
+                    <h5>Are you sure you want to Logout ?</h5>
+                    <br/>
+                    <button type="button" class="btn btn-default thela-btn1" data-dismiss="modal">Cancel</button>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();" class="btn btn-danger thela-btn2">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
+          </div>
+            </div>
+        </div>
+    </div>
+    <style>
+    .thela-btn1{width:50%;float:left;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0px;padding: 7px 0px;
+        font-size: 18px;font-weight: 500;}
+        .thela-btn2{width:50%;float:right;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-left-radius:0px;padding: 7px 0px;
+            font-size: 18px;}
+            .modal-contenttt {border-bottom-left-radius:0px;border-bottom-right-radius:0px;    margin-top: 20%;}
+            .modal-body {
+                position: relative;
+                padding: 0px;
+            }
+        </style>	<script>
+            $(document).ready(function(){
+                $("#logout").click(function(){
+                    $('#myModal').modal('hide');
+                });
+            });
+        </script>
+        <style>
+        .top-menu{padding:7px;margin-bottom:6px;width:100%;background-color:rgba(0,0,0,0.6);}
+        .top-menu a{color:#fff;text-decoration:none !important;}
+        .dwnld-app{background-color:rgba(0,0,0,0.6);color:#fff;text-align:center;padding:10px 0px;font-size:16px;}
+        .bottom-div{position:fixed;bottom:0px;left:0px;width:100%;}
+        .bot-row{padding:10px;}
+        .modal.left .modal-dialog,
+        .modal.right .modal-dialog {
+            position: fixed;
+            margin: auto;
+            width: 300px;
+            height: 100%;
+            -webkit-transform: translate3d(0%, 0, 0);
+            -ms-transform: translate3d(0%, 0, 0);
+            -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+        }
+        .modal.left .modal-content,
+        .modal.right .modal-content {
+            height: 100%;
+            overflow-y: auto;
+        }
+        .modal.left .modal-body,
+        .modal.right .modal-body {
+            padding: 15px 15px 80px;
+        }
+        /*Left*/
+        .modal.left.fade .modal-dialog{
+            left: -300px;
+            -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+            -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+            -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+            transition: opacity 0.3s linear, left 0.3s ease-out;
+        }
+        .modal.left.fade.in .modal-dialog{
+            left: 0;
+        }
+        /* ----- MODAL STYLE ----- */
+        .modal-content {
+            border-radius: 0;
+            border: none;
+        }
+        #map_canvas .centerMarker {
+            position: absolute;
+            /*url of the marker*/
+            background: url(http://maps.gstatic.com/mapfiles/markers2/marker.png) no-repeat;
+            /*center the marker*/
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            /*fix offset when needed*/
+            margin-left: -10px;
+            margin-top: -34px;
+            /*size of the image*/
+            height: 34px;
+            width: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyA-OBGAXvwI7wTNLbNT1l57Kjno8B8PK6Q&callback=initMap"></script>
+    <script>
+        function initialize(lat, long){
+            var mapOptions={
+                zoom: 18,
+                center: new google.maps.LatLng(lat, long),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                fullscreenControl: false
+            };
+            map = new google.maps.Map(document.getElementById('map_canvas'),
+                mapOptions);
+            google.maps.event.addListener(map,'center_changed', function(){
+                var geocoder = new google.maps.Geocoder();
+                var latLng = new google.maps.LatLng(map.getCenter().lat(), map.getCenter().lng());
+                geocoder.geocode({ 'latLng': latLng}, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        console.log(results[0].formatted_address); 
+                        var act_field=$('.confirm-loc').attr('confirm-act');
+                        if(act_field=="picuploc"){
+                            $("#pickup-lat").val(map.getCenter().lat());
+                            $("#pickup-long").val(map.getCenter().lng());
+                        }
+                        if(act_field=="droploc"){
+                            $("#drop-lat").val(map.getCenter().lat());
+                            $("#drop-long").val(map.getCenter().lng());
+                        }
+                        $('#'+act_field).val(results[0].formatted_address);
+                    }
+                });
+            });
+            $('<div/>').addClass('centerMarker').appendTo(map.getDiv());
+        }
+    </script>
+    <script>
+        google.maps.event.addDomListener(window, 'load', function(){
+            var places_1 = new google.maps.places.Autocomplete(document.getElementById('picuploc'));
+            google.maps.event.addListener(places_1, 'place_changed', function (){
+                place_1=places_1.getPlace();
+                var latitude = place_1.geometry.location.lat();
+                var longitude = place_1.geometry.location.lng();
+                var address = place_1.formatted_address;
+                $("#pickup_lts").val(address);
+                $("#pickup-lat").val(latitude);
+                $("#pickup-long").val(longitude);
+                initialize(latitude, longitude);
+            });
+        });
+        google.maps.event.addDomListener(window, 'load', function(){
+            var places_2 = new google.maps.places.Autocomplete(document.getElementById('droploc'));
+            google.maps.event.addListener(places_2, 'place_changed', function (){
+                place_2=places_2.getPlace();
+                var latitude = place_2.geometry.location.lat();
+                var longitude = place_2.geometry.location.lng();
+                var address = place_2.formatted_address;
+                $("#drop_lts").val(address);
+                $("#drop-lat").val(latitude);
+                $("#drop-long").val(longitude);
+                initialize(latitude, longitude);
+            });
+        });
+    </script>
+    <script>
+    $(document).on("click", ".current", function(){
+      if(navigator.geolocation){
+         navigator.geolocation.getCurrentPosition(function(p){
+         var geocoder = new google.maps.Geocoder();
+         var latLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+          geocoder.geocode({'latLng': latLng}, function(results, status){
+           if (status == google.maps.GeocoderStatus.OK){
+             $("#picuploc").val(results[0].formatted_address);
+             $("#pickup-lat").val(p.coords.latitude);
+             $("#pickup-long").val(p.coords.longitude);
+             initialize(p.coords.latitude, p.coords.longitude);
+           }else{}
+          });
+      });
+      }else{
+       alert('Geo Location feature is not supported in this browser.');
+     } 
+   });
+ </script>
+ <script>
+            $(".confirm-loc").click(function(){ 
+                $(".step1").css("display", "block");
+                $(".steppickup").css("display", "none");
+                $(".map").css("display", "none");
+                $(".stepdrop").css("display", "none");
+                $(".current-loc").css("display", "none");
+                var act_field=$('.confirm-loc').attr('confirm-act');
+                if(act_field=="picuploc"){
+                     $("#pickup_lts").val($("#"+act_field).val());
+                }
+                if(act_field=="droploc"){
+                     $("#dropup_lts").val($("#"+act_field).val());
+                }
+            });
+            $(".pickup").click(function(){ 
+                $(".step1").css("display", "none");
+                $(".steppickup").css("display", "block");
+                $(".map").css("display", "block");
+                $(".stepdrop").css("display", "none");
+                $(".confirm-loc").attr('confirm-act', 'picuploc');
+                $(".current-loc").css("display", "block");
+                initialize($("#pickup-lat").val(), $("#pickup-long").val());
+            });
+            $(".drop").click(function(){
+                $(".step1").css("display", "none");
+                $(".stepdrop").css("display", "block");
+                $(".map").css("display", "block");
+                $(".steppickup").css("display", "none");
+                $(".confirm-loc").attr('confirm-act', 'droploc');
+                $(".current-loc").css("display", "none");
+                initialize($("#drop-lat").val(), $("#drop-long").val());
+            });
+            $(".back2").click(function(){
+                $(".step1").css("display", "block");
+                $(".steppickup").css("display", "none");
+                $(".stepdrop").css("display", "none");
+                $(".map").css("display", "none");
+            });
+            /*$(".current").click(function(){
+                $(".step1").css("display", "block");
+                $(".steppickup").css("display", "none");
+                $(".stepdrop").css("display", "none");
+                $(".map").css("display", "none");
+            });*/
+    </script>  
+</body>
+</html>

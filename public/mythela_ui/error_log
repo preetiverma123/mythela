@@ -1,0 +1,2 @@
+[12-Feb-2019 10:52:00 Etc/GMT] PHP Notice:  Undefined index: mobileno in /home/mythela/public_html/public/mythela_ui/logincode.php on line 2
+[12-Feb-2019 10:52:00 Etc/GMT] PHP Notice:  Undefined index: g-recaptcha-response in /home/mythela/public_html/public/mythela_ui/logincode.php on line 3

@@ -1,0 +1,6 @@
+[02-Mar-2019 07:08:23 UTC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/mythela/public_html/control/app/Http/Controllers/DashController.php on line 125
+[04-Mar-2019 13:47:10 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\DashController::managepartner() in /home/mythela/public_html/control/app/Http/Controllers/DashController.php on line 66
+[01-Apr-2019 06:38:39 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 199233536 bytes) in /home/mythela/public_html/control/app/Http/Controllers/DashController.php on line 299
+[01-Apr-2019 06:38:55 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 199233536 bytes) in /home/mythela/public_html/control/app/Http/Controllers/DashController.php on line 299
+[02-Apr-2019 11:48:34 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\DashController::get_km() in /home/mythela/public_html/control/app/Http/Controllers/DashController.php on line 464
+[04-Apr-2019 13:57:28 UTC] PHP Fatal error:  Cannot use Datatables as Datatables because the name is already in use in /home/mythela/public_html/control/app/Http/Controllers/DashController.php on line 12

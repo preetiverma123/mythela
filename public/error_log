@@ -1,0 +1,2 @@
+[06-Apr-2019 13:26:34 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Driver::driverinfo() in /home/mythela/public_html/app/Driver.php on line 20
+[06-Apr-2019 13:26:45 Asia/Kolkata] PHP Fatal error:  Cannot redeclare App\Driver::driverinfo() in /home/mythela/public_html/app/Driver.php on line 20
