@@ -131,9 +131,9 @@ public function maptracking(){
   return view('front/maptracking');
 }
 public function partnerfleet(Request $request){
-      $data['name']            =!empty($request->name)?$request->name:'';
-      $data['mobile']          =!empty($request->mobile)?$request->mobile:'';
-      $data['city']            =!empty($request->city)?$request->city:'';
+      $data['name']            =!empty($request->name);
+      $data['mobile']          =!empty($request->mobile);
+      $data['city']            =!empty($request->city);
       
       $inserId = Partner_fleet::add($data);
           $this->status   = true;
