@@ -21,7 +21,7 @@
 							<i class="fa fa-2x fa-bars" data-toggle="modal" data-target="#myModal"></i>
 						</div>
 						<div class="col-xs-6 text-center">
-						<a href="index.php"><img src="img/logo3.png" height="45px"></a>
+						<a href="index.php"><img src="img/giphy.gif" height="45px"></a>
 						</div>
 						<div class="col-xs-3 text-right">
 						<!--if user is not login-->

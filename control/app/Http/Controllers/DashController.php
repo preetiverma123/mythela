@@ -55,51 +55,51 @@ class DashController extends Controller
 		}
 	}
 	public function index(){
-		$bookings = DB::connection('mythela_db')->select('SELECT count(*) as total FROM `bookings` WHERE created_at >= ( CURDATE() - INTERVAL 7 DAY )');
-		$booking_o = DB::connection('mythela_db')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.status="ongoing"');
-		$booking_c = DB::connection('mythela_db')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.status="completed"');
-		$booking_cancel = DB::connection('mythela_db')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.status="cancelled"');
+		$bookings = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` WHERE created_at >= ( CURDATE() - INTERVAL 7 DAY )');
+		$booking_o = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.status="ongoing"');
+		$booking_c = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.status="completed"');
+		$booking_cancel = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.status="cancelled"');
 		return view('dash/dashboard', ['bookings'=>$bookings, 'ongoing'=>$booking_o, 'completed'=>$booking_c, 'cancelled'=>$booking_cancel]);
 	}
 	public function allbooking(){
-		$bookings = DB::connection('mythela_db')->table('users')->join('bookings', 'users.id', '=', 'bookings.user_id')->get();
+		$bookings = DB::connection('ogonn_ogonn')->table('users')->join('bookings', 'users.id', '=', 'bookings.user_id')->get();
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function ongoingbooking(){
-		$bookings = DB::connection('mythela_db')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('status', 'ongoing')->get();
+		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('status', 'ongoing')->get();
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function completedbooking(){
-		$bookings = DB::connection('mythela_db')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('status', 'completed')->get(); 
+		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('status', 'completed')->get(); 
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function cancelledbooking(){
-		$bookings = DB::connection('mythela_db')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('status', 'expired')->get(); 
+		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('status', 'expired')->get(); 
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function managecustomer(){
-		$users = DB::connection('mythela_db')->table('users')->join('roles', 'users.role_id', '=', 'roles.id')->where('roles.slug', 'customer')->select('users.*')->get(); 
+		$users = DB::connection('ogonn_ogonn')->table('users')->join('roles', 'users.role_id', '=', 'roles.id')->where('roles.slug', 'customer')->select('users.*')->get(); 
 		return view('dash/manage-customers', ['users'=>$users]);
 	}
 	public function managepartner(){
 		if(role(Auth::user()['role_id'])=="superadmin"){
-			$users = DB::connection('mythela_db')->table('users')->where('driver_role_id', '2')->orWhere('vendor_role_id', '3')->get();
+			$users = DB::connection('ogonn_ogonn')->table('users')->where('driver_role_id', '2')->orWhere('vendor_role_id', '3')->get();
 		}else{
-			$users = DB::connection('mythela_db')->table('users')->where(['vendor_role_id'=>'2', 'city_id'=>Auth::user()['city_id']])->orWhere(['vendor_role_id'=>'3', 'city_id'=>Auth::user()['city_id']])->get();
+			$users = DB::connection('ogonn_ogonn')->table('users')->where(['vendor_role_id'=>'2', 'city_id'=>Auth::user()['city_id']])->orWhere(['vendor_role_id'=>'3', 'city_id'=>Auth::user()['city_id']])->get();
 		}
 		return view('dash/manage-partners', ['users'=>$users]);
 	}
 	public function managevehicle(){
 		if(role(Auth::user()['role_id'])=="superadmin"){
-			$vehicles = DB::connection('mythela_db')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
+			$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
 		}
 		if(role(Auth::user()['role_id'])=="admin"){
-			$vehicles = DB::connection('mythela_db')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
+			$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
 		}
 		return view('dash/manage-vehicles', ['vehicles'=>$vehicles]);
 	}
 	public function vehicle_detail(Request $request, $vehicle_id){
-		$vehicle_first = DB::connection('mythela_db')->table('photos')->where('vehicle_id', decode($vehicle_id))->join('vehicles', 'photos.vehicle_id', '=', 'vehicles.id')->join('users', 'vehicles.vendor_id', '=', 'users.id')->selectRaw('users.*, vehicles.* , photos.*')->first();
+		$vehicle_first = DB::connection('ogonn_ogonn')->table('photos')->where('vehicle_id', decode($vehicle_id))->join('vehicles', 'photos.vehicle_id', '=', 'vehicles.id')->join('users', 'vehicles.vendor_id', '=', 'users.id')->selectRaw('users.*, vehicles.* , photos.*')->first();
 		return view('dash/detail-vehicle', ['vehicle_first'=>$vehicle_first]);
 	}
 	public function manageadmins(Request $request, $user_id=""){
@@ -126,9 +126,9 @@ class DashController extends Controller
 				return redirect()->back()->with('msg', ['type'=>'success','text'=>'User has been created.']);
 			}
 		}
-		$states = DB::connection('mythela_db')->table('states')->get();
+		$states = DB::connection('ogonn_ogonn')->table('states')->get();
 		$users_first = User::where('id', decode($user_id))->first();
-		$cities = DB::connection('mythela_db')->table('cities')->where('state_id', $users_first['state_id'])->get();
+		$cities = DB::connection('ogonn_ogonn')->table('cities')->where('state_id', $users_first['state_id'])->get();
 		$users = User::with('role')->whereHas('role', function($q){
 			$q->where('slug', '=', 'admin');
 		})->get(); 
@@ -137,7 +137,7 @@ class DashController extends Controller
 	public function status(Request $request){
 		if($request->input('action')=="user"){
 			if($request->input('user_id') && $request->input('status')){
-				DB::connection('mythela_db')->table('users')->where('id', decode($request->input('user_id')))->update(['status'=>$request->input('status')]);
+				DB::connection('ogonn_ogonn')->table('users')->where('id', decode($request->input('user_id')))->update(['status'=>$request->input('status')]);
 				$users_firstch = User::where('id', decode($request->input('user_id')))->first();
 				if($users_firstch['email']){
 					$emailto=$users_firstch['email'];
@@ -155,7 +155,7 @@ class DashController extends Controller
 		}
 		if($request->input('action')=="driver"){
 			if($request->input('user_id') && $request->input('status')){
-				DB::connection('mythela_db')->table('users')->where('id', decode($request->input('user_id')))->update(['driver_status'=>$request->input('status')]);
+				DB::connection('ogonn_ogonn')->table('users')->where('id', decode($request->input('user_id')))->update(['driver_status'=>$request->input('status')]);
 				$users_firstch = User::where('id', decode($request->input('user_id')))->first();
 				if($users_firstch['email']){
 					$emailto=$users_firstch['email'];
@@ -173,7 +173,7 @@ class DashController extends Controller
 		}
 		if($request->input('action')=="vendor"){
 			if($request->input('user_id') && $request->input('status')){
-				DB::connection('mythela_db')->table('users')->where('id', decode($request->input('user_id')))->update(['vendor_status'=>$request->input('status')]);
+				DB::connection('ogonn_ogonn')->table('users')->where('id', decode($request->input('user_id')))->update(['vendor_status'=>$request->input('status')]);
 				$users_firstch = User::where('id', decode($request->input('user_id')))->first();
 				if($users_firstch['email']){
 					$emailto=$users_firstch['email'];
@@ -191,17 +191,17 @@ class DashController extends Controller
 		}
 		if($request->input('action')=="partner"){
 			if($request->input('user_id') && $request->input('status')){
-				DB::connection('mythela_db')->table('users')->where('id', decode($request->input('user_id')))->update(['partner_status'=>$request->input('status')]);
+				DB::connection('ogonn_ogonn')->table('users')->where('id', decode($request->input('user_id')))->update(['partner_status'=>$request->input('status')]);
 			}
 		}
 		if($request->input('action')=="document"){
 			if($request->input('docs_id') && $request->input('status')){
-				DB::connection('mythela_db')->table('photos')->where('id', decode($request->input('docs_id')))->update(['status_docs'=>$request->input('status')]);
+				DB::connection('ogonn_ogonn')->table('photos')->where('id', decode($request->input('docs_id')))->update(['status_docs'=>$request->input('status')]);
 				if($request->input('status')=="rejected"){
-					DB::connection('mythela_db')->table('users')->where('id', decode($request->input('user_id')))->update(['driver_status'=>'block']);
+					DB::connection('ogonn_ogonn')->table('users')->where('id', decode($request->input('user_id')))->update(['driver_status'=>'block']);
 				}
 				if($request->input('status')=="approved"){
-					DB::connection('mythela_db')->table('users')->where('id', decode($request->input('user_id')))->update(['driver_status'=>'approved']);
+					DB::connection('ogonn_ogonn')->table('users')->where('id', decode($request->input('user_id')))->update(['driver_status'=>'approved']);
 				}
 			}
 		}
@@ -212,39 +212,39 @@ class DashController extends Controller
 		}
 		if($request->input('action')=="vehicles"){
 			if($request->input('vehicle_id') && $request->input('status')){
-				$veh_list=DB::connection('mythela_db')->table('photos')->where('id', decode($request->input('vehicle_id')))->first();
+				$veh_list=DB::connection('ogonn_ogonn')->table('photos')->where('id', decode($request->input('vehicle_id')))->first();
 				$vehicle_id=$veh_list->vehicle_id;
-				DB::connection('mythela_db')->table('vehicles')->where('id', $vehicle_id)->update(['vehicle_status'=>$request->input('status')]);
-				DB::connection('mythela_db')->table('photos')->where('id', decode($request->input('vehicle_id')))->update(['status_docs'=>$request->input('status')]);
+				DB::connection('ogonn_ogonn')->table('vehicles')->where('id', $vehicle_id)->update(['vehicle_status'=>$request->input('status')]);
+				DB::connection('ogonn_ogonn')->table('photos')->where('id', decode($request->input('vehicle_id')))->update(['status_docs'=>$request->input('status')]);
 			}
 		}
 	}
 	public function view_detail(Request $request, $booking_id){
-		$booking_detail = DB::connection('mythela_db')->table('users')->join('bookings', 'users.id', '=', 'bookings.user_id')->leftJoin('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->leftJoin('transactions', 'booking_confirms.booking_id', '=', 'transactions.booking_id')->where('bookings.id', decode($booking_id))->first();
+		$booking_detail = DB::connection('ogonn_ogonn')->table('users')->join('bookings', 'users.id', '=', 'bookings.user_id')->leftJoin('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->leftJoin('transactions', 'booking_confirms.booking_id', '=', 'transactions.booking_id')->where('bookings.id', decode($booking_id))->first();
 		return view('dash/booking-details', ['booking_detail'=>$booking_detail]);
 	}
 	public function manage_partner_commission(Request $request, $commission_id=""){
 		if($request->isMethod('post')){
 			$this->validator($request->input(), 'commission');
-			DB::connection('mythela_db')->table('settings')->where('id', 1)->update(['commission'=>$request->input('commission')]);
+			DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->update(['commission'=>$request->input('commission')]);
 			return redirect()->back()->with('msg', ['type'=>'success','text'=>'data has been updated.']);
 		}
 		if(@$commission_id){
-			$clist_l=DB::connection('mythela_db')->table('settings')->where('id', decode(@$commission_id))->first();
+			$clist_l=DB::connection('ogonn_ogonn')->table('settings')->where('id', decode(@$commission_id))->first();
 		}
-		$clist=DB::connection('mythela_db')->table('settings')->where('id', 1)->first();
+		$clist=DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->first();
 		return view('dash/manage-partners-commisson', ['clists'=>$clist, 'clist_l'=>@$clist_l]);
 	}
 	public function manage_insurance(Request $request, $insurance_id=""){
 		if($request->isMethod('post')){
 			$this->validator($request->input(), 'insurance');
-			DB::connection('mythela_db')->table('settings')->where('id', 1)->update(['insurance'=>$request->input('insurance')]);
+			DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->update(['insurance'=>$request->input('insurance')]);
 			return redirect()->back()->with('msg', ['type'=>'success','text'=>'data has been updated.']);
 		}
 		if(@$insurance_id){
-			$clist_l=DB::connection('mythela_db')->table('settings')->where('id', decode(@$insurance_id))->first();
+			$clist_l=DB::connection('ogonn_ogonn')->table('settings')->where('id', decode(@$insurance_id))->first();
 		}
-		$ilist=DB::connection('mythela_db')->table('settings')->where('id', 1)->first();
+		$ilist=DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->first();
 		return view('dash/manage-insurance', ['ilists'=>$ilist, 'clist_l'=>@$clist_l]);
 	}
 	public function addadmin(Request $request){
@@ -267,10 +267,10 @@ class DashController extends Controller
 	public function detailpartner(Request $request,  $partner_id){
 		$user_id=decode($partner_id);
 		$photolist="";
-		$ulist = DB::connection('mythela_db')->table('users')->where('id', $user_id)->first();
-		$photolist_1 = DB::connection('mythela_db')->table('photos')->where('vendor_id', $user_id)->first();
-		$photolist_2 = DB::connection('mythela_db')->table('photos')->where('driver_id', $user_id)->first();
-		$vehicleInfo = DB::connection('mythela_db')->table('drivers')->join('vehicles', 'drivers.driver_id', '=', 'vehicles.driver_id')->where('drivers.driver_id', $user_id)->first();
+		$ulist = DB::connection('ogonn_ogonn')->table('users')->where('id', $user_id)->first();
+		$photolist_1 = DB::connection('ogonn_ogonn')->table('photos')->where('vendor_id', $user_id)->first();
+		$photolist_2 = DB::connection('ogonn_ogonn')->table('photos')->where('driver_id', $user_id)->first();
+		$vehicleInfo = DB::connection('ogonn_ogonn')->table('drivers')->join('vehicles', 'drivers.driver_id', '=', 'vehicles.driver_id')->where('drivers.driver_id', $user_id)->first();
 		if($photolist_1){
 			$photolist=$photolist_1;
 		}
@@ -281,16 +281,16 @@ class DashController extends Controller
 	}
 	public function detailcustomer(Request $request,  $customer_id){
 		$user_id=decode($customer_id);
-		$ulist = DB::connection('mythela_db')->table('users')->where('id', $user_id)->first();
+		$ulist = DB::connection('ogonn_ogonn')->table('users')->where('id', $user_id)->first();
 		return view('dash/detail-customer', ['ulist'=>$ulist]);	
 	}
 	public function manage_accounts(){
 		$ulist=User::with('role')->with('role')->whereHas('role', function($q){
 			$q->where('slug', '=', 'admin');
 		})->get();
-		$ulist = DB::connection('mythela_db')->table('users')->where('driver_role_id', 2)->orwhere('vendor_role_id', 3)->get();
-		$clist = DB::connection('mythela_db')->table('cities')->get();
-		$rlist = DB::connection('mythela_db')->table('roles')->where('slug', '!=', 'customer')->get();
+		$ulist = DB::connection('ogonn_ogonn')->table('users')->where('driver_role_id', 2)->orwhere('vendor_role_id', 3)->get();
+		$clist = DB::connection('ogonn_ogonn')->table('cities')->get();
+		$rlist = DB::connection('ogonn_ogonn')->table('roles')->where('slug', '!=', 'customer')->get();
 		return view('dash/manage-accounts', ['uslists'=>$ulist, 'clist'=>$clist, 'rlist'=>$rlist]);
 	}
 	public function filter_accounts(Request $request){
@@ -316,7 +316,7 @@ class DashController extends Controller
 		}else{
 			$wh.=' where `vendor_role_id` != "" and `driver_role_id` != ""';	
 		}
-		$blist=DB::connection('mythela_db')->select('select cities.name as name, users.* from users inner join cities on users.city_id=cities.id '.$wh);
+		$blist=DB::connection('ogonn_ogonn')->select('select cities.name as name, users.* from users inner join cities on users.city_id=cities.id '.$wh);
 		return dataTables()->of($blist)->toJson();
 	}
 	public function delete(Request $request){
@@ -324,12 +324,12 @@ class DashController extends Controller
 		$Msg['text-msg']='';
 		if($request->isMethod('delete')){
 			if($request->input('action')=="city"){
-				DB::connection('mythela_db')->table('cities')->where('id', decode($request->input('city_id')))->delete();
+				DB::connection('ogonn_ogonn')->table('cities')->where('id', decode($request->input('city_id')))->delete();
 				$Msg['response']='true';
 				$Msg['text-msg']='success';
 			}
 			if($request->input('action')=="state"){
-				DB::connection('mythela_db')->table('states')->where('id', decode($request->input('state_id')))->delete();
+				DB::connection('ogonn_ogonn')->table('states')->where('id', decode($request->input('state_id')))->delete();
 				$Msg['response']='true';
 				$Msg['text-msg']='success';
 			}
@@ -339,40 +339,40 @@ class DashController extends Controller
 	public function state(Request $request,  $state_id=""){
 		if($request->isMethod('post')){
 			if($state_id){
-				DB::connection('mythela_db')->table('states')->where('id', decode($state_id))->update(['name'=>$request->input('name'), 'code'=>$request->input('code')]);
+				DB::connection('ogonn_ogonn')->table('states')->where('id', decode($state_id))->update(['name'=>$request->input('name'), 'code'=>$request->input('code')]);
 				return redirect()->back()->with('msg', ['type'=>'success','text'=>'Data has been saved.']);
 			}else{
-				DB::connection('mythela_db')->insert('insert into states (id, name, code) values (?, ?, ?)', array(NULL, $request->input('name'), $request->input('code')));
+				DB::connection('ogonn_ogonn')->insert('insert into states (id, name, code) values (?, ?, ?)', array(NULL, $request->input('name'), $request->input('code')));
 				return redirect()->back()->with('msg', ['type'=>'success','text'=>'Data has been inserted.']);
 			}
 		}
-		$state_f = DB::connection('mythela_db')->table('states')->where('id', decode($state_id))->first();
-		$states = DB::connection('mythela_db')->table('states')->get();
+		$state_f = DB::connection('ogonn_ogonn')->table('states')->where('id', decode($state_id))->first();
+		$states = DB::connection('ogonn_ogonn')->table('states')->get();
 		return view('dash/manage-state', ['states'=>@$states, 'state_f'=>$state_f]);
 	}
 	public function city(Request $request,  $city_id=""){
 		if($request->isMethod('post')){
 			if($city_id){
-				DB::connection('mythela_db')->table('cities')->where('id', decode($city_id))->update(['name'=>$request->input('name'), 'state_id'=>$request->input('state_id')]);
+				DB::connection('ogonn_ogonn')->table('cities')->where('id', decode($city_id))->update(['name'=>$request->input('name'), 'state_id'=>$request->input('state_id')]);
 				return redirect()->back()->with('msg', ['type'=>'success','text'=>'Data has been saved.']);
 			}else{
-				DB::connection('mythela_db')->insert('insert into cities (id, name, state_id) values (?, ?, ?)', array(NULL, $request->input('name'), $request->input('state_id')));
+				DB::connection('ogonn_ogonn')->insert('insert into cities (id, name, state_id) values (?, ?, ?)', array(NULL, $request->input('name'), $request->input('state_id')));
 				return redirect()->back()->with('msg', ['type'=>'success','text'=>'Data has been inserted.']);
 			}
 		}
-		$city_f = DB::connection('mythela_db')->table('cities')->where('id', decode($city_id))->first();
-		$cities = DB::connection('mythela_db')->table('cities')->get();
-		$states = DB::connection('mythela_db')->table('states')->get();
+		$city_f = DB::connection('ogonn_ogonn')->table('cities')->where('id', decode($city_id))->first();
+		$cities = DB::connection('ogonn_ogonn')->table('cities')->get();
+		$states = DB::connection('ogonn_ogonn')->table('states')->get();
 		return view('dash/manage-city', ['cities'=>@$cities, 'city_f'=>$city_f, 'states'=>$states]);
 	}
 	public function detail_earning(Request $request, $id){
-		$ulist = DB::connection('mythela_db')->table('users')->where('id', decode($id))->first();
-		$total_earning = DB::connection('mythela_db')->table('drivers')->join('booking_confirms', 'drivers.driver_id', '=', 'booking_confirms.driver_id')->join('bookings', 'booking_confirms.booking_id', '=', 'bookings.id')->join('transactions', 'booking_confirms.booking_id', '=', 'transactions.booking_id')->where(['drivers.vendor_id'=>decode($id)])->orwhere(['drivers.driver_id'=>decode($id)])->sum('booking_confirms.price');
-		$btransaction= DB::connection('mythela_db')->table('drivers')->select('transactions.*')->join('booking_confirms', 'drivers.driver_id', '=', 'booking_confirms.driver_id')->join('bookings', 'booking_confirms.booking_id', '=', 'bookings.id')->join('transactions', 'booking_confirms.booking_id', '=', 'transactions.booking_id')->where(['drivers.vendor_id'=>decode($id)])->orwhere(['drivers.driver_id'=>decode($id)])->get();
+		$ulist = DB::connection('ogonn_ogonn')->table('users')->where('id', decode($id))->first();
+		$total_earning = DB::connection('ogonn_ogonn')->table('drivers')->join('booking_confirms', 'drivers.driver_id', '=', 'booking_confirms.driver_id')->join('bookings', 'booking_confirms.booking_id', '=', 'bookings.id')->join('transactions', 'booking_confirms.booking_id', '=', 'transactions.booking_id')->where(['drivers.vendor_id'=>decode($id)])->orwhere(['drivers.driver_id'=>decode($id)])->sum('booking_confirms.price');
+		$btransaction= DB::connection('ogonn_ogonn')->table('drivers')->select('transactions.*')->join('booking_confirms', 'drivers.driver_id', '=', 'booking_confirms.driver_id')->join('bookings', 'booking_confirms.booking_id', '=', 'bookings.id')->join('transactions', 'booking_confirms.booking_id', '=', 'transactions.booking_id')->where(['drivers.vendor_id'=>decode($id)])->orwhere(['drivers.driver_id'=>decode($id)])->get();
 		return view('dash/detail-earnings', ['first_ulist'=>$ulist, 'total_earning'=>$total_earning, 'btrans'=>$btransaction]);
 	}
 	public function get_city(Request $request){
-		$clist = DB::connection('mythela_db')->table('cities')->where('state_id', $request->input('state_id'))->get();
+		$clist = DB::connection('ogonn_ogonn')->table('cities')->where('state_id', $request->input('state_id'))->get();
 		return view('dash/city-list', ['clist'=>$clist]);
 	}
 	public function reset_password(Request $request){
@@ -395,99 +395,99 @@ class DashController extends Controller
 	public function manage_credit_limit(Request $request, $id=""){
 		if($request->isMethod('post')){
 			$this->validator($request->input(), 'credit');
-			DB::connection('mythela_db')->table('settings')->where('id', 1)->update(['credit_limit_amount'=>$request->input('credit')]);
+			DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->update(['credit_limit_amount'=>$request->input('credit')]);
 			return redirect()->back()->with('msg', ['type'=>'success','text'=>'data has been updated.']);
 		}
-		$clist=DB::connection('mythela_db')->table('settings')->where('id', 1)->first();
+		$clist=DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->first();
 		return view('dash/manage-credit-limit', ['credit_amount'=>$clist]);
 	}
 	public function manage_gst(Request $request, $id=""){
 		if($request->isMethod('post')){
 			$this->validator($request->input(), 'gst');
 			$p=$request->input('gst')/2;
-			DB::connection('mythela_db')->table('settings')->where('id', 1)->update(['psgst'=>$p, 'pcgst'=>$p]);
+			DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->update(['psgst'=>$p, 'pcgst'=>$p]);
 			return redirect()->back()->with('msg', ['type'=>'success','text'=>'data has been updated.']);
 		}
-		$gst=DB::connection('mythela_db')->table('settings')->where('id', 1)->first();
+		$gst=DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->first();
 		return view('dash/manage-gst', ['gst'=>$gst]);
 	}
 	public function manage_stax(Request $request, $id=""){
 		if($request->isMethod('post')){
 			$this->validator($request->input(), 'stax');
 			$p=$request->input('stax')/2;
-			DB::connection('mythela_db')->table('settings')->where('id', 1)->update(['sgst'=>$p, 'cgst'=>$p]);
+			DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->update(['sgst'=>$p, 'cgst'=>$p]);
 			return redirect()->back()->with('msg', ['type'=>'success','text'=>'data has been updated.']);
 		}
-		$gst=DB::connection('mythela_db')->table('settings')->where('id', 1)->first();
+		$gst=DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->first();
 		return view('dash/manage-service-tax', ['gst'=>$gst]);
 	}
 	public function manage_trip(Request $request, $id=""){
 		if($request->isMethod('post')){
 			$this->validator($request->input(), 'trip');
 			$t=$request->input('trip');
-			DB::connection('mythela_db')->table('settings')->where('id', 1)->update(['referal_trip'=>$t]);
+			DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->update(['referal_trip'=>$t]);
 			return redirect()->back()->with('msg', ['type'=>'success','text'=>'data has been updated.']);
 		}
-		$trip=DB::connection('mythela_db')->table('settings')->where('id', 1)->first();
+		$trip=DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->first();
 		return view('dash/manage-trip', ['trip'=>$trip]);
 	}
 	public function manage_vehicle_list(Request $request, $id=""){
 		if($request->isMethod('post')){
 			$this->validator($request->input(), 'vehicle');
 			if($id){
-				DB::connection('mythela_db')->table('vehicle_lists')->where('id', decode(@$id))->update(['name'=>$request->input('name'), 'description'=>$request->input('description')]);
+				DB::connection('ogonn_ogonn')->table('vehicle_lists')->where('id', decode(@$id))->update(['name'=>$request->input('name'), 'description'=>$request->input('description')]);
 			}else{
-				DB::connection('mythela_db')->insert('insert into vehicle_lists (id, name, description) values (?, ?, ?)', array(NULL, $request->input('name'), $request->input('description')));
+				DB::connection('ogonn_ogonn')->insert('insert into vehicle_lists (id, name, description) values (?, ?, ?)', array(NULL, $request->input('name'), $request->input('description')));
 			}
 		}
-		$vfst=DB::connection('mythela_db')->table('vehicle_lists')->where('id', decode(@$id))->first();
-		$vlist=DB::connection('mythela_db')->table('vehicle_lists')->get();
+		$vfst=DB::connection('ogonn_ogonn')->table('vehicle_lists')->where('id', decode(@$id))->first();
+		$vlist=DB::connection('ogonn_ogonn')->table('vehicle_lists')->get();
 		return view('dash/manage-vehicle-list', ['vfst'=>$vfst, 'vlist'=>$vlist]);
 	}
 	public function manage_surround(Request $request, $id=""){
 		if($request->isMethod('post')){
-			$flm=DB::connection('mythela_db')->table('vehicle_surround_areas')->where('city_id', $request->input('city_id'))->first();
+			$flm=DB::connection('ogonn_ogonn')->table('vehicle_surround_areas')->where('city_id', $request->input('city_id'))->first();
 			print_r($flm);
 			if(@$flm->id){
-				DB::connection('mythela_db')->table('vehicle_surround_areas')->where('city_id', $request->input('city_id'))->update(['range_area'=>$request->input('range_area')]);
+				DB::connection('ogonn_ogonn')->table('vehicle_surround_areas')->where('city_id', $request->input('city_id'))->update(['range_area'=>$request->input('range_area')]);
 				return redirect()->back()->with('msg', ['type'=>'success','text'=>'data has been created.']);
 			}else{
-				DB::connection('mythela_db')->insert('insert into vehicle_surround_areas (id, city_id, range_area) values (?, ?, ?)', array(NULL, $request->input('city_id'), $request->input('range_area')));
+				DB::connection('ogonn_ogonn')->insert('insert into vehicle_surround_areas (id, city_id, range_area) values (?, ?, ?)', array(NULL, $request->input('city_id'), $request->input('range_area')));
 				return redirect()->back()->with('msg', ['type'=>'success','text'=>'data has been updated.']);
 			}
 		}
 		$frole=Role::where('id', Auth::user()['role_id'])->first();
 		if($frole['slug']=="superadmin"){
-			$clist=DB::connection('mythela_db')->table('cities')->get();
-			$sround_area=DB::connection('mythela_db')->table('vehicle_surround_areas')->get();
+			$clist=DB::connection('ogonn_ogonn')->table('cities')->get();
+			$sround_area=DB::connection('ogonn_ogonn')->table('vehicle_surround_areas')->get();
 		}else{
-			$clist=DB::connection('mythela_db')->table('cities')->where('id', Auth::user()['city_id'])->get();
-			$sround_area=DB::connection('mythela_db')->table('vehicle_surround_areas')->where('city_id', Auth::user()['city_id'])->get();
+			$clist=DB::connection('ogonn_ogonn')->table('cities')->where('id', Auth::user()['city_id'])->get();
+			$sround_area=DB::connection('ogonn_ogonn')->table('vehicle_surround_areas')->where('city_id', Auth::user()['city_id'])->get();
 		}
 		return view('dash/manage-surround-area', ['clist'=>$clist, 'frole'=>$frole, 'sround_area'=>$sround_area]);
 	}
 	public function get_km(Request $request){
-		return DB::connection('mythela_db')->table('vehicle_surround_areas')->where('city_id', $request->input('city_id'))->pluck('range_area');
+		return DB::connection('ogonn_ogonn')->table('vehicle_surround_areas')->where('city_id', $request->input('city_id'))->pluck('range_area');
 	}
 	public function manage_exp_licence(Request $request){
 		if($request->isMethod('post')){
-			DB::connection('mythela_db')->table('settings')->where('id', 1)->update(['alert_licence_by'=>$request->input('alert_licence_by')]);
+			DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->update(['alert_licence_by'=>$request->input('alert_licence_by')]);
 		}
-		$slist=DB::connection('mythela_db')->table('settings')->where('id', 1)->first();
+		$slist=DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->first();
 		return view('dash/manage-exp-licence', ['slist'=>$slist]);
 	}
 	public function manage_exp_fitness(Request $request){
 		if($request->isMethod('post')){
-			DB::connection('mythela_db')->table('settings')->where('id', 1)->update(['alert_fitness_by'=>$request->input('alert_fitness_by')]);
+			DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->update(['alert_fitness_by'=>$request->input('alert_fitness_by')]);
 		}
-		$slist=DB::connection('mythela_db')->table('settings')->where('id', 1)->first();
+		$slist=DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->first();
 		return view('dash/manage-exp-fitness', ['slist'=>$slist]);
 	}
 	public function manage_insurance_email(Request $request){
 		if($request->isMethod('post')){
-			DB::connection('mythela_db')->table('settings')->where('id', 1)->update(['insurance_email'=>$request->input('insurance_email')]);
+			DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->update(['insurance_email'=>$request->input('insurance_email')]);
 		}
-		$slist=DB::connection('mythela_db')->table('settings')->where('id', 1)->first();
+		$slist=DB::connection('ogonn_ogonn')->table('settings')->where('id', 1)->first();
 		return view('dash/manage-insurance-email', ['slist'=>$slist]);
 	}
 }

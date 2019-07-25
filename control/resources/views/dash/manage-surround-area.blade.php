@@ -69,7 +69,7 @@
                 @endphp
                 @foreach($sround_area as $sround_area_l)
                 @php 
-                   $ffirst=DB::connection('mythela_db')->table('cities')->where('id', $sround_area_l->city_id)->first();
+                   $ffirst=DB::connection('ogonn_ogonn')->table('cities')->where('id', $sround_area_l->city_id)->first();
                 @endphp
                 <tr>
                   <td>{{$lcount++}}</td>

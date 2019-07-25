@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <p class="text-justify"><b><span style="font-size:23px;">RJM</span> Enterprises Pvt Ltd</b> Provide Best Logistic and transport Solution for On-Road Transportation Services. We offer a hassle-free movement of goods for cross Industry warehouses with an end-to-end online tracking solution at a minimum pricing good service and back up every shipment with latest Technology features & professional Customer Support. </p>
+                    <p class="text-justify"><b><span style="font-size:23px;">Ogonn</span> Technologies</b> Provide Best Logistic and transport Solution for On-Road Transportation Services. We offer a hassle-free movement of goods for cross Industry warehouses with an end-to-end online tracking solution at a minimum pricing good service and back up every shipment with latest Technology features & professional Customer Support. </p>
                     <p class="text-justify">Our vision is to be globally recognized by importers and exporters as a leading provider of specialized transport logistics management services in India. This we achieve through understanding the complexities associated with trading in India and having the right people, Open systems and considered partnerships to enable us to continuously exceed our clients’ expectations.</p>
                 </div>
                 <div class="col-md-5">
@@ -19,7 +19,7 @@
            
             <div class="row">
                 <div class="col-md-12">
-                    <p class="text-justify">We understand the complexities of the Indian market. By understanding of factors such as port congestion, poor infrastructure, lack of common standards and communication breakdowns, which are inherently unique to the Indian logistics context, RJM Enterprises Pvt. Ltd. has positioned itself to provide a comprehensive range of specialized end-to-end logistics and travel solutions in India. </p>
+                    <p class="text-justify">We understand the complexities of the Indian market. By understanding of factors such as port congestion, poor infrastructure, lack of common standards and communication breakdowns, which are inherently unique to the Indian logistics context, Ogonn Technologies has positioned itself to provide a comprehensive range of specialized end-to-end logistics and travel solutions in India. </p>
                     <p class="text-justify">We believe in partnerships with our clients, as their success ultimately determines our success. As a result, we place high value on professionalism, trust, integrity and building long term relationships.</p>
                     <h3>Associated Companies</h3>
                     <ol>

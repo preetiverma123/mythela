@@ -270,7 +270,7 @@ else $('.depart').hide(); // hide div if value is not "custom"
         <img src="{{asset('img/logistic.jpg')}}" width="100%">
       </div>
       <div class="col-md-4">
-        <div class="htt"><strong>RJM Enterprises<strong></div><br/>
+        <div class="htt"><strong>Ogonn Technologies<strong></div><br/>
           <div class="heading2">OUR VISION</div>
           <div class="heading3">Our vision is to be globally recognized by manufacturer and supplier as a leading provider of specialized transport logistics management services in India. This we achieve through understanding the complexities associated with trading in Africa and having the right people, systems and strategic partnerships to enable us to continuously exceed our clients’ expectations.</div>
           <!--<br/>-->

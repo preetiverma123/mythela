@@ -98,8 +98,8 @@
                   @foreach($users as $user)
                   <tr>
                     @php 
-                     $statefirst = DB::connection('mythela_db')->table('states')->where('id', $user['state_id'])->first();
-                     $citisfirst = DB::connection('mythela_db')->table('cities')->where('id', $user['city_id'])->first();
+                     $statefirst = DB::connection('ogonn_ogonn')->table('states')->where('id', $user['state_id'])->first();
+                     $citisfirst = DB::connection('ogonn_ogonn')->table('cities')->where('id', $user['city_id'])->first();
                     @endphp
                     <td>{{$user['first_name']}}</td>
                     <td>{{$user['last_name']}}</td>

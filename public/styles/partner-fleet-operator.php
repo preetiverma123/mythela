@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Partner : My Thela</title>
+        <title>Partner : Ogonn</title>
         <link rel="shortcut icon" href="img/fav.png" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@
                             <div class="row">
                               
                                 <div class="frm2">
-                                    <h4 class="frm1-head">Run your Fleet on My Thela</h4>
+                                    <h4 class="frm1-head">Run your Fleet on Ogonn</h4>
                                    Enter your details below.<br/> Our team will contact you in the next 24 hours.
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
         <hr/>
         <div class="container bg-3 text-center">
             <h2>Documents Required</h2>
-            <p class="info">for becoming a partner with My Thela</p>
+            <p class="info">for becoming a partner with Ogonn</p>
             <img src="img/ul.png" width="50%">
             <br/><br/>
         </div>

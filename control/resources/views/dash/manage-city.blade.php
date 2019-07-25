@@ -66,7 +66,7 @@
                 <tbody>
                   @foreach($cities as $cities)
                   @php 
-                   $statefr=DB::connection('mythela_db')->table('states')->where('id', $cities->state_id)->first();
+                   $statefr=DB::connection('ogonn_ogonn')->table('states')->where('id', $cities->state_id)->first();
                   @endphp
                   <tr class="city_{{encode($cities->id)}}">
                     <td>{{$cities->name}}</td>

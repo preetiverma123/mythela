@@ -112,9 +112,9 @@
   </div>
   @if(@$booking_detail->driver_id)
   @php 
-  $driver = DB::connection('mythela_db')->table('users')->join('drivers', 'users.id', '=', 'drivers.driver_id')->where('users.id', $booking_detail->driver_id)->first();
-  $vehiclef = DB::connection('mythela_db')->table('vehicles')->where('driver_id', $booking_detail->driver_id)->first();
-  $vehiclet = DB::connection('mythela_db')->table('vehicle_lists')->where('id', $vehiclef->vehicle_type_id)->first();
+  $driver = DB::connection('ogonn_ogonn')->table('users')->join('drivers', 'users.id', '=', 'drivers.driver_id')->where('users.id', $booking_detail->driver_id)->first();
+  $vehiclef = DB::connection('ogonn_ogonn')->table('vehicles')->where('driver_id', $booking_detail->driver_id)->first();
+  $vehiclet = DB::connection('ogonn_ogonn')->table('vehicle_lists')->where('id', $vehiclef->vehicle_type_id)->first();
   @endphp
   @endif
   <div class="box-body">

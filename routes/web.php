@@ -40,6 +40,7 @@ Route::get('/booking-confirm/{booking_id}', 'BookController@bookingconfirm')->na
 Route::post('/booking-find/{booking_id}', 'BookController@bookingfind')->name('booking.find');
 Route::get('/maps', 'BookController@maptracking')->name('maps');
 Route::get('/maps-apk/{booking_id}', 'BookController@maps_apk')->name('maps.apk');
+Route::get('/partner-fleet', function(){ return view('front/partner-fleet');})->name('partner.fleet');
 
 Route::get('/contact-us', function(){ return view('front/contact-us');})->name('contact.us');
 Route::get('/about-us', function(){ return view('front/about-us');})->name('about.us');

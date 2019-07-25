@@ -39,12 +39,12 @@
                 <tr>
                   @php 
                    if($vehicle->city_id){
-                     $cfirst = DB::connection('mythela_db')->table('cities')->where('id', $vehicle->city_id)->first();
+                     $cfirst = DB::connection('ogonn_ogonn')->table('cities')->where('id', $vehicle->city_id)->first();
                    }
                    if($vehicle->state_id){
-                     $sfirst = DB::connection('mythela_db')->table('states')->where('id', $vehicle->state_id)->first();
+                     $sfirst = DB::connection('ogonn_ogonn')->table('states')->where('id', $vehicle->state_id)->first();
                    }
-                   $vfirst = DB::connection('mythela_db')->table('vehicle_lists')->where('id', $vehicle->vehicle_type_id)->first();
+                   $vfirst = DB::connection('ogonn_ogonn')->table('vehicle_lists')->where('id', $vehicle->vehicle_type_id)->first();
                   @endphp
                   <td>{{$vfirst->name}}</td>
                   <td>{{$vehicle->transport}}</td>

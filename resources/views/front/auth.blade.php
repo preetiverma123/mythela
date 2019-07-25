@@ -10,7 +10,7 @@
 <!-- login-->
 <form id="form-login" method="post">
   <div class="left-desk login">
-    <a href="{{route('home')}}"><img src="img/logo3.png" height="50px"></a>
+    <a href="{{route('home')}}"><img src="img/giphy.gif" height="50px"></a>
     <h4>Enter Your Mobile Number</h4>
     <p class="para">OTP will be sent for verification</p>
     <input type="text" class="login-input" id="mobile_no" name="mobile" required="" pattern="^\d{10}$" title="Enter valid 10 digit mobile number"  placeholder="+91 Enter Your Number" style="max-width:304px;"/>
@@ -23,7 +23,7 @@
 <!-- verify-->
 <form id="form-verify" method="post">
   <div class="left-desk otp">
-    <a href="{{route('home')}}"><img src="img/logo3.png" height="50px"></a>
+    <a href="{{route('home')}}"><img src="img/giphy.gif" height="50px"></a>
     <h4 class="verify_h_1">Verify & Login</h4>
     <p class="para">Enter the OTP sent to 8765530888</p>
     <p class="para-otp" style="display: none;"></p>
@@ -36,7 +36,7 @@
 <!-- signup-->
 <form id="form-signup" method="post">
   <div class="left-desk signup">
-    <a href="{{route('home')}}"><img src="img/logo3.png" height="50px"></a>
+    <a href="{{route('home')}}"><img src="img/giphy.gif" height="50px"></a>
     <h4>Create Your Account</h4>
     <p class="para">Please fill the details to SignUp</p>
     <input type="text" class="login-input2" name="fullname" required="" placeholder="Enter Full Name"/>

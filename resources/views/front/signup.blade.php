@@ -28,7 +28,7 @@
                     
                     <!-- verify-->
                     <div class="left-desk otp">
-                        <a href="index.php"><img src="img/logo3.png" height="50px"></a>
+                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
                         <h4>Verify & Login</h4>
                         <p class="para">Enter the OTP sent to 8765530888</p>
                         <input type="text" class="login-input" placeholder="Enter 4 digit OTP"/>
@@ -40,7 +40,7 @@
                       
                     <div class="left-desk signup">{{csrf_field()}}
                     <input type="hidden" class="form-controll" name="mob" value="<?php echo $mob; ?>">
-                        <a href="index.php"><img src="img/logo3.png" height="50px"></a>
+                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
                         <h4>Create Your Account</h4>
                         <p class="para">Please fill the details to SignUp</p>
                         <input type="text" class="form-controll" name="name" placeholder="Enter Full Name"/>

@@ -37,8 +37,8 @@
               <tbody>
                 @foreach($users as $user)
                 @php 
-                    $state_li = DB::connection('mythela_db')->table('states')->where('id', $user->state_id)->first();
-                    $city_li = DB::connection('mythela_db')->table('cities')->where('id', $user->city_id)->first();
+                    $state_li = DB::connection('ogonn_ogonn')->table('states')->where('id', $user->state_id)->first();
+                    $city_li = DB::connection('ogonn_ogonn')->table('cities')->where('id', $user->city_id)->first();
                 @endphp
                 <tr>
                   <td>{{$user->fullname}}</td>

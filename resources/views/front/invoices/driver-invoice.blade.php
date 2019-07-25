@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MyThela : Invoice</title>
+  <title>Ogonn : Invoice</title>
   <meta charset="utf-8">
   <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -30,7 +30,7 @@
 	<br/>
 	<div class="row ptb10">
         <div class="col-xs-6">
-		<img src="https://mythela.com/img/logo3.png" height="57px" style="padding:8px;"><br/>
+		<img src="https://mythela.com/img/giphy.gif" height="57px" style="padding:8px;"><br/>
 			<b>RJM Enterprises Pvt. Ltd.</b><br/>
 			c-212 1Address 1 1 es dshvbjdshjgvbdswjhvbgfdbh f sdfsdfsd fsd f sdf dsfdsd <br/>
 			121212

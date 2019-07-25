@@ -128,7 +128,7 @@
         listraz['name']="Ogonn";
         listraz['currency']="INR";
         listraz['description']="Secure Transaction";
-        listraz['image']="{{asset('img/logo3.png')}}";
+        listraz['image']="{{asset('img/giphy.gif')}}";
         listraz['handler']=function (response){window.location.replace('{{route("payment", ["id"=>""])}}/'+response.razorpay_payment_id);};
         listraz['prefill']['name']="{{@Auth::user()['fullname']}}";
         listraz['prefill']['contact']="{{@Auth::user()['mobile']}}";

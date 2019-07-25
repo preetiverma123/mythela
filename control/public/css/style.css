@@ -20,7 +20,7 @@
 @media screen and (max-height: 700px) {
 .right-desk-gen{height:700px;}
 }
-.right-desk-content{margin-top:40%;margin-left:10%;margin-right:10%;font-size:22px;color:#f7d102;}
+.right-desk-content{margin-top:40%;margin-left:10%;margin-right:10%;font-size:22px;color:#ffa500;}
 .right-desk-content2{color:#E01012;margin-top:38%;margin-left:10%;margin-right:10%;font-size:23px;font-weight:bold;}
 .fa-long-arrow-left{color:#000;}
 
@@ -129,7 +129,7 @@ margin-bottom:0px;}
 
 
 
-.foot-heading{color:#f7d102;text-transform:uppercase;}
+.foot-heading{color:#ffa500;text-transform:uppercase;}
 footer { background: #393939;color: rgba(255, 255, 255, 0.8);padding:20px;font-size:12px;}
 .thela-item{border:1px solid #ddd;border-radius:6px; 
   /* background-image: linear-gradient(#B71C1C, #fff); */
@@ -208,14 +208,14 @@ footer { background: #393939;color: rgba(255, 255, 255, 0.8);padding:20px;font-s
 .whenselect:focus{outline:none;}
 
 .btn-skin{font-weight:500;    color: #000;padding:7px 0px;font-size:18px;
- background-color: #f7d102;
-    border-color: #f7d102;}
+ background-color: #ffa500;
+    border-color: #ffa500;}
 	.btn-skin2{font-weight:500;    color: #000;padding:7px 0px;font-size:15px;
- background-color: #f7d102;
-    border-color: #f7d102;}
+ background-color: #ffa500;
+    border-color: #ffa500;}
     .btn-skin3{ color: #000;font-size:14px;font-weight:500;
- background-color: #f7d102;
-    border-color: #f7d102;}
+ background-color: #ffa500;
+    border-color: #ffa500;}
 
 @media (min-width: 768px)
 {
@@ -227,12 +227,12 @@ footer { background: #393939;color: rgba(255, 255, 255, 0.8);padding:20px;font-s
 .navbar-right {
     padding-top: 5px;
 }}
-.book-now{background-color:#f7d102;}
+.book-now{background-color:#ffa500;}
 .book-now:hover{background-color:#E59D37 !important;color:#000 !important;}
 .info-cont{    padding:10px 20px 5px 20px;}
 
 .para{    color: rgba(0, 0, 0, 0.6);}
-.h44{background-color:#f7d102;padding:6px 10px;margin:0px !important;    font-size: 22px;}
+.h44{background-color:#ffa500;padding:6px 10px;margin:0px !important;    font-size: 22px;}
 
 .rib{
         position:absolute;    left: 15px;

@@ -38,7 +38,7 @@
                   <th>Partner Type</th>
                   <td>
                     @php 
-                    $rolesfirst = DB::connection('mythela_db')->table('roles')->whereIn('id', [$ulist->driver_role_id, $ulist->vendor_role_id])->get();
+                    $rolesfirst = DB::connection('ogonn_ogonn')->table('roles')->whereIn('id', [$ulist->driver_role_id, $ulist->vendor_role_id])->get();
                     @endphp
                     
                     @foreach($rolesfirst as $role)
@@ -60,8 +60,8 @@
                   <td>{{@$ulist->email}}</td>
                 </tr>
                  @php 
-                    $state_li = DB::connection('mythela_db')->table('states')->where('id', $ulist->state_id)->first();
-                    $city_li = DB::connection('mythela_db')->table('cities')->where('id', $ulist->city_id)->first();
+                    $state_li = DB::connection('ogonn_ogonn')->table('states')->where('id', $ulist->state_id)->first();
+                    $city_li = DB::connection('ogonn_ogonn')->table('cities')->where('id', $ulist->city_id)->first();
                 @endphp
                 <tr>
                   <th>State</th>

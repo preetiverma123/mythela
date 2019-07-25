@@ -46,7 +46,7 @@
                         <i class="fa fa-2x fa-bars" data-toggle="modal" data-target="#myModal"></i>
                     </div>
                     <div class="col-xs-6 text-center">
-                        <a href="{{route('home')}}"><img src="{{asset('img/logo3.png')}}" height="45px"></a>
+                        <a href="{{route('home')}}"><img src="{{asset('img/giphy.gif')}}" height="45px"></a>
                     </div>
                     <div class="col-xs-3 text-right">
                         <!--if user is not login-->

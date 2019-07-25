@@ -39,7 +39,7 @@
                   <td>Logistic</td>
                   <td>{{$booking->material_type}}</td>
                   @php 
-                   $vehicle_info = DB::connection('mythela_db')->table('vehicle_lists')->where('id', $booking->vehicle_type_id)->first();
+                   $vehicle_info = DB::connection('ogonn_ogonn')->table('vehicle_lists')->where('id', $booking->vehicle_type_id)->first();
                   @endphp
                   <td>{{$vehicle_info->name}}</td>
                   <td><a href="{{route('view.detail', ['id'=>encode($booking->id)])}}" class="btn btn-info btn-xs">View</a></td>

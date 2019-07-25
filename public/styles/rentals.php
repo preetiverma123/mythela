@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>My Thela</title>
+  <title>Ogonn</title>
   <link rel="shortcut icon" href="img/fav.png" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -255,7 +255,7 @@
 </div>
   <br/>
 <div class="container bg-3 text-center">    
-  <h2>Rentals @ My Thela</h2>
+  <h2>Rentals @ Ogonn</h2>
 
   <p class="info">The Best Way For Your Destination</p>
    <img src="img/ul.png" width="50%">

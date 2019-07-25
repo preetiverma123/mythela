@@ -21,7 +21,7 @@ public function __construct()
 */
 public function index()
 {
-    $users = DB::connection('mythela_db')->table('users')->get();
+    $users = DB::connection('ogonn_ogonn')->table('users')->get();
     return view('home');
 }
 }

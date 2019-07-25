@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\User;
 use App\State;
 use App\City;
@@ -77,6 +78,7 @@ class BookController extends Controller
     $list=Booking_confirm::where(['booking_id'=>decode($booking_id), 'status'=>'pending'])->with(['userInfo', 'bookingInfo'])->orderBy('id', 'desc')->get();
     return view('front/bidding-info', ['biddings'=>$list]);
   }
+  
   public function confirm_booking(Request $request, $bidding_id){
     if($request->isMethod('post')){
       $list_getb=Booking_confirm::where('id', decode($bidding_id))->first();

@@ -48,11 +48,11 @@ return [
         'strict' => true,
         'engine' => null,
     ],
-    'mythela_db' => [
+    'ogonn_ogonn' => [
         'driver' => 'mysql',
         'host' => env('DB_HOST', '127.0.0.1'),
         'port' => env('DB_PORT', '3306'),
-        'database' =>'mythela_db',
+        'database' =>'ogonn_ogonn',
         'username' => env('DB_USERNAME', 'mythela_user'),
         'password' => env('DB_PASSWORD', 'Mythela@2019'),
         'unix_socket' => env('DB_SOCKET', ''),

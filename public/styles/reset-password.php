@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>My Thela</title>
+        <title>Ogonn</title>
         <link rel="shortcut icon" href="img/fav.png" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -34,7 +34,7 @@
                     <br/>
                     <form action="logincode.php" method="post" enctype="multipart/form-data">
                     <div class="left-desk login">
-                        <a href="index.php"><img src="img/logo3.png" height="50px"></a>
+                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
                         <h4>Reset Password</h4>
                         <input type="password" class="login-input2" placeholder="New Password" required style="max-width:304px;"/>
                         <input type="password" class="login-input" placeholder="Confirm Password" required style="max-width:304px;"/>
@@ -50,7 +50,7 @@
                 <div class="col-md-8 hidden-sm hidden-xs right-desk4 right-desk-gen">
                     <div class="right-desk-content2">
                         <h2 class="white">Admin Login</h2>
-                        # My Thela Admin
+                        # Ogonn Admin
                     </div>
                 </div>
             </div>

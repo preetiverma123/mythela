@@ -62,10 +62,10 @@
                   </tr>
                   @php 
                   if($vehicle_first->city_id){
-                  $cfirst = DB::connection('mythela_db')->table('cities')->where('id', $vehicle_first->city_id)->first();
+                  $cfirst = DB::connection('ogonn_ogonn')->table('cities')->where('id', $vehicle_first->city_id)->first();
                 }
                 if($vehicle_first->state_id){
-                $sfirst = DB::connection('mythela_db')->table('states')->where('id', $vehicle_first->state_id)->first();
+                $sfirst = DB::connection('ogonn_ogonn')->table('states')->where('id', $vehicle_first->state_id)->first();
               }
               @endphp
               <tr>
