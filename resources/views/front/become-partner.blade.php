@@ -1,6 +1,16 @@
 @extends('layouts.app-front')
 @section('content')
 <!-- fleet -->
+<style type="text/css">
+    .text-style{
+        text-shadow: 0 0 3px #ffa500;
+        font-family: Georgia, Times, "Times New Roman", serif;
+        font-style: italic;
+        color: #e23233;
+        font-variant: normal;
+        font-size: 18px;
+    }
+</style>
   <div class="container bg-3 text-center">
             <h2>Become a Partner</h2>
             <p class="info">Earn Money With <span class="text-style">Ogonn</span></p>
@@ -26,7 +36,8 @@
                     <h4>Become Fleet Operator</h4>
                     <p class="para">Become a fleet operator and Track & control your fleet with one app live tracking.</p>
                     <a class="btn btn-block btn-skin" href="{{url('partner-fleet')}}">Apply Now</a>
-                </div></div>
+                </div>
+            </div>
              
             </div>
             <br/>

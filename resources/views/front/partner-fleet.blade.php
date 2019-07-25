@@ -14,25 +14,34 @@
                                    Enter your details below.<br/> Our team will contact you in the next 24 hours.
                                 </div>
                             </div>
-                            <div class="text-left">
-                                <div class="pickup row">
-                                    <div class="pic-span col-xs-2">NAME</div>
-                                    <div class="con-span col-xs-10" ><input class="whenselect" type="text" placeholder="Enter Your Name"></div>
-                                </div>
-                                <div class="drop row">
-                                    <div class="pic-span col-xs-2">MOBILE</div>
-                                    <div class="con-span col-xs-10"><input class="whenselect" type="text" placeholder="Enter Your Mobile"></div>
-                                </div>
-                                <div class="when row">
-                                    <div class="pic-span col-xs-2">CITY</div>
-                                    <div class="con-span col-xs-10">
-                                        <select class="whenselect">
-                                            <option>Select Your City</option>
-                                        </select>
+                            <form id="form-contact" role="become-partner" method="post" >
+                                {{csrf_field()}}
+                                <div class="text-left">
+                                    <div class="pickup row">
+                                        <div class="pic-span col-xs-2">NAME</div>
+                                        <div class="con-span col-xs-10" >
+                                            <input class="whenselect" type="text" name="name" placeholder="Enter Your Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="drop row">
+                                        <div class="pic-span col-xs-2">MOBILE</div>
+                                        <div class="con-span col-xs-10"><input class="whenselect" name="mobile" type="text" placeholder="Enter Your Mobile" required></div>
+                                    </div>
+                                    <div class="when row">
+                                        <div class="pic-span col-xs-2">CITY</div>
+                                        <div class="con-span col-xs-10">
+                                            <select class="whenselect" name="city" required>
+                                                <option>Select Your City</option>
+                                                <option>Lucknow</option>
+                                                <option>Kanpur</option>
+                                                <option>Allahabad</option>
+                                                <option>Banaras</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <button class="btn btn-skin btn-block">SUBMIT</button>
+                                <button class="btn btn-skin btn-block" data-request="ajax-submit" data-target='[role="become-partner"]'>SUBMIT</button>
+                            </form>
 							</div>
 							  
                         </div>

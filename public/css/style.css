@@ -21,9 +21,24 @@
     right:0;
     background-image: linear-gradient(90deg,rgba(46,54,59,0),#c70304);
 }
+.text-style{
+
+}
 .movecar{
     transform: translate(180deg);
     position: relative;
+}
+.movecar:before{
+    content: "Ogonn";
+    position: absolute;
+    top: 14px;
+    color: #fff;
+    left: 160px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-style: italic;
+    font-variant: normal;
+    text-shadow: 0 0 3px #ffa501;
+    font-size: 26px;
 }
 .movecar:after{
     content: "";
@@ -36,7 +51,6 @@
     margin-top: -7px;
     /* opacity: .5; */
     background-size: cover;
-    background-color: rgba(255,255,255,8);
 }
 @-webkit-keyframes bouncephone {
     0% { transform: translateX(-10px)  }
@@ -177,9 +191,9 @@ body{    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxy
 }
 .movecar:after{
     height: 50px;
-    width: 110px;
+    width: 90px;
     margin:5px ;
-    margin-left: 10px;
+    margin-left: 12px;
 }
 @-webkit-keyframes bouncephone {
     0% { transform: translateX(0px)  }
@@ -263,6 +277,7 @@ footer { background: #393939;color: rgba(255, 255, 255, 0.8);padding:20px 0 10px
 .material-ul li img{margin-left:auto;margin-right:auto;}
 @media screen and (max-width: 419px) {
  .material-ul li{font-size:10px !important;    width: 32%;}   
+ .movecar:before{font-size: 20px;left: 110px;}
 }
 .pickup,.drop,.when,.depart,.veh,.mat,.weight{    position: relative;color:#000;font-size:14px;
     background-color:rgba(255,255,255,0.7);

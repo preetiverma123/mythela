@@ -291,7 +291,7 @@ else $('.depart').hide(); // hide div if value is not "custom"
           <img src="{{asset('img/appstore.png')}}" class="store">
         </div>
         <div class="col-sm-5 hidden-xs">
-          <img src="{{asset('img/thela-booking.png')}}" width="100%">
+          <img src="{{asset('img/ogonn-booking.png')}}" width="100%">
         </div>
       </div>
     </div>
