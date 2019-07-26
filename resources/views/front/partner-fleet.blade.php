@@ -35,7 +35,7 @@
                                                 <option>Lucknow</option>
                                                 <option>Kanpur</option>
                                                 <option>Allahabad</option>
-                                                <option>Banaras</option>
+                                                <option>Varanasi</option>
                                             </select>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
         <hr/>
         <div class="container bg-3 text-center">
             <h2>Documents Required</h2>
-            <p class="info">for becoming a partner with Ogonn</p>
+            <p class="info">for becoming a partner with <span class="text-style">Ogonn</span></p>
             <img src="img/ul.png" width="50%">
             <br/><br/>
         </div>

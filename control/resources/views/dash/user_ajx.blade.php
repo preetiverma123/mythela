@@ -57,7 +57,7 @@
           <form method="post">
             {{csrf_field()}}
             <div class="left-desk login">
-              <a href="{{route('home')}}"><img src="img/giphy.gif" height="50px"></a>
+              <a href="{{route('home')}}"><img src="img/logo.gif" height="50px"></a>
               <h4>Admin Login</h4>
               @if(Session::get('msg'))
               <div class="alert alert-{{Session::get('msg')['type']}} alert-block">

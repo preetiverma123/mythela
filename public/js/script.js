@@ -105,6 +105,35 @@ $(document).on('click','[data-request="ajax-submit"]',function(){
     }); 
 });
 
+$(document).ready(function(){
+    $('.menu-button').on('click', function(){
+        $(this).css("display","none");
+         $('.do-main-menu').addClass('navigation-panel-new');
+         $("body").css("overflow","hidden");
+         $(".close-menu").css("display","block");
+        
+         $('.opened .close-header-layer').fadeIn(300);
+         closePopups();
+         return false;
+        });
+        $('.close-header-layer, .close-menu').on('click', function(){ 
+        $(".menu-button").css("display","block"); 
+        $('.do-main-menu').removeClass('navigation-panel-new');
+         $(".close-menu").css("display","none");
+         $("body").css("overflow","scroll");
+         $('.close-header-layer:visible').fadeOut(300);
+    });
+
+        /* WOW Scroll Spy
+    ========================================================*/
+     var wow = new WOW({
+      //disabled for mobile
+        mobile: false
+    });
+
+    wow.init();
+});
+
 $(document).on('click','[data-request="ajax-confirm"]',function(){
     $('.alert').remove(); $(".has-error").removeClass('has-error');$('.error-message').remove();
 

@@ -41,7 +41,7 @@ Route::post('/booking-find/{booking_id}', 'BookController@bookingfind')->name('b
 Route::get('/maps', 'BookController@maptracking')->name('maps');
 Route::get('/maps-apk/{booking_id}', 'BookController@maps_apk')->name('maps.apk');
 Route::get('/partner-fleet', 'BookController@partnerfleet')->name('partner-fleet');
-Route::post('/partner-fleet', 'BookController@partnerfleet')->name('partner-fleet');
+Route::post('/partner-fleet', 'BookController@partnerfleetsubmit')->name('partner-fleet');
 
 Route::get('/contact-us', function(){ return view('front/contact-us');})->name('contact.us');
 Route::get('/about-us', function(){ return view('front/about-us');})->name('about.us');

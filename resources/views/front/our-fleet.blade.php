@@ -44,7 +44,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/erick.jpg"></div>
                           <div class="col-sm-8">
                               <h4>eRick</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">E-Rick's have now transitioned from being a market entrant in the automobile segment of the country to evolve as a leading short distance transport solution.</p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
@@ -52,7 +52,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/auto.png"></div>
                           <div class="col-sm-8">
                               <h4>Auto</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">The auto rickshaw is a common form of urban transport, both as a vehicle for hire and for private use, in many countries around the world.</p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
@@ -60,7 +60,9 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/bike.png"></div>
                           <div class="col-sm-8">
                               <h4>Bike</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">
+                                No one wnats to wait in a traffic every day, Now as with Ogonn Bike you can  reduce your travel time by at least 50%.  
+                            </p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
@@ -68,7 +70,9 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/micro.png"></div>
                           <div class="col-sm-8">
                               <h4>Micro</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">
+                                AC cars that seat up to 3 people and give you great value for your money. Small fares for short rides.
+                            </p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
@@ -76,7 +80,9 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/mini.png"></div>
                           <div class="col-sm-8">
                               <h4>Mini</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">
+                                  A regular comfortable AC hatchback that becomes your everyday dependable ride. An economical option for daily commute.
+                              </p>
                           </div></div>
                       </div>
                       
@@ -86,40 +92,37 @@
                       <div class="row">
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/prime.png"></div>
                           <div class="col-sm-8">
-                              <h4>Prime</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <h4>Prime Sedan</h4>
+                              <p class="text-justify para">
+                              Add the comfort of a high-rated sedan to your daily commute. Avialable free Wifi and more comfortable for travel.
+                            </p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
-                      <div class="row">
-                          <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/prime-play.png"></div>
-                          <div class="col-sm-8">
-                              <h4>Prime Play</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
-                          </div></div>
+                        <div class="row">
+                            <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/prime-play.png"></div>
+                            <div class="col-sm-8">
+                                <h4>Prime Play</h4>
+                                <p class="text-justify para">Provide full entertainment that allow you to listen music, watch movies and stay connected you to on move.</p>
+                            </div>
+                          </div>
                       </div>
+                      
                       <div class="fleet-pic-row">
-                      <div class="row">
-                          <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/share.png"></div>
-                          <div class="col-sm-8">
-                              <h4>Share</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
-                          </div></div>
-                      </div>
-                      <div class="fleet-pic-row">
-                      <div class="row">
-                          <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/suv.jpg"></div>
-                          <div class="col-sm-8">
-                              <h4>Prime SUV</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
-                          </div></div>
+                        <div class="row">
+                            <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/suv.jpg"></div>
+                            <div class="col-sm-8">
+                                <h4>Prime SUV</h4>
+                                <p class="text-justify para">Aimed at families needing an abundance of passenger room, SUV with three rows of seating that hold up to eight passengers in relative luxury.</p>
+                            </div>
+                        </div>
                       </div>
                       <div class="fleet-pic-row">
                       <div class="row">
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/lux.png"></div>
                           <div class="col-sm-8">
                               <h4>LUX</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Our most luxurious ride option, Lux is for moments when you want to splurge and celebrate.</p>
                           </div></div>
                       </div>
                       
@@ -139,15 +142,15 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/mini.png"></div>
                           <div class="col-sm-8">
                               <h4>Mini</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">A regular comfortable AC hatchback that becomes your everyday dependable ride. An economical option for daily commute.</p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
                       <div class="row">
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/prime.png"></div>
                           <div class="col-sm-8">
-                              <h4>Prime</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <h4>Prime Sedan</h4>
+                              <p class="text-justify para">Add the comfort of a high-rated sedan to your daily commute. Avialable free Wifi and more comfortable for travel.</p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
@@ -155,7 +158,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/prime-play.png"></div>
                           <div class="col-sm-8">
                               <h4>Prime Play</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Provide full entertainment that allow you to listen music, watch movies and stay connected you to on move.</p>
                           </div></div>
                       </div>
                       
@@ -167,7 +170,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/suv.jpg"></div>
                           <div class="col-sm-8">
                               <h4>Prime SUV</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Aimed at families needing an abundance of passenger room, SUV with three rows of seating that hold up to eight passengers in relative luxury.</p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
@@ -175,7 +178,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/lux.png"></div>
                           <div class="col-sm-8">
                               <h4>LUX</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Our most luxurious ride option, Lux is for moments when you want to splurge and celebrate.</p>
                           </div></div>
                       </div>
                       
@@ -191,7 +194,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/tpickup.jpg"></div>
                           <div class="col-sm-8">
                               <h4>Pickup</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">A pickup truck is a light-duty truck having an enclosed cab and an open cargo area with low sides and tailgate.</p>
                           </div></div>
                       </div>
                       
@@ -200,7 +203,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/tdala.jpg"></div>
                           <div class="col-sm-8">
                               <h4>Dala</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Dala is use to ship luggage bag from one place to another in lower price.</p>
                           </div></div>
                       </div>
                       
@@ -209,22 +212,10 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/tdcm.jpg"></div>
                           <div class="col-sm-8">
                               <h4>DCM</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Making Ever-better Cars through Vehicle Data Management. Greater vehicle connectivity through expanded installation of Data Communication Module (DCM).</p>
                           </div></div>
                       </div>
-                      
-                      <div class="fleet-pic-row">
-                      <div class="row">
-                          <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/thela.jpg"></div>
-                          <div class="col-sm-8">
-                              <h4>Thela</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
-                          </div></div>
-                      </div>
-                      
                      
-                     
-                      
                   </div>
                   <div class="col-md-6 col-sm-12">
                       
@@ -233,7 +224,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/tcargo.jpg"></div>
                           <div class="col-sm-8">
                               <h4>Cargo</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Industries in the Truck Transportation subsector provide over-the-road transportation of cargo using motor vehicles, such as trucks and tractor trailers.</p>
                           </div></div>
                       </div>
                       
@@ -242,7 +233,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/tcontainer.jpg"></div>
                           <div class="col-sm-8">
                               <h4>Container</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Designed and built for intermodal freight transport, meaning these containers can be used across different modes of transport – from ship to rail to truck – without unloading and reloading their cargo.</p>
                           </div></div>
                       </div>
                       
@@ -251,18 +242,11 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/tcarmover.png"></div>
                           <div class="col-sm-8">
                               <h4>Car Mover</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Transporting your vehicle safely to its intended destination is your top priority. At Car Mover LLC, we offer reliable vehicle transport to any destination across the nation.</p>
                           </div></div>
                       </div>
                       
-                      <div class="fleet-pic-row">
-                      <div class="row">
-                          <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/towtruck.jpg"></div>
-                          <div class="col-sm-8">
-                              <h4>Tow Truck</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
-                          </div></div>
-                      </div>
+                      
                       
                   </div>
               </div>
@@ -276,15 +260,15 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/mini.png"></div>
                           <div class="col-sm-8">
                               <h4>Mini</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">A regular comfortable AC hatchback that becomes your everyday dependable ride. An economical option for daily commute.</p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
                       <div class="row">
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/prime.png"></div>
                           <div class="col-sm-8">
-                              <h4>Prime</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <h4>Prime Sedan</h4>
+                              <p class="text-justify para">Add the comfort of a high-rated sedan to your daily commute. Avialable free Wifi and more comfortable for travel.</p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
@@ -292,7 +276,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/prime-play.png"></div>
                           <div class="col-sm-8">
                               <h4>Prime Play</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Provide full entertainment that allow you to listen music, watch movies and stay connected you to on move.</p>
                           </div></div>
                       </div>
                       
@@ -304,7 +288,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/suv.jpg"></div>
                           <div class="col-sm-8">
                               <h4>Prime SUV</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Aimed at families needing an abundance of passenger room, SUV with three rows of seating that hold up to eight passengers in relative luxury.</p>
                           </div></div>
                       </div>
                       <div class="fleet-pic-row">
@@ -312,7 +296,7 @@
                           <div class="col-sm-4 text-center"><img class="fleet-pic" src="img/fleet/lux.png"></div>
                           <div class="col-sm-8">
                               <h4>LUX</h4>
-                              <p class="text-justify para">Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text</p>
+                              <p class="text-justify para">Our most luxurious ride option, Lux is for moments when you want to splurge and celebrate.</p>
                           </div></div>
                       </div>
                       

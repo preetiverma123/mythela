@@ -34,7 +34,7 @@
                     <br/>
                     <form action="logincode.php" method="post" enctype="multipart/form-data">
                     <div class="left-desk login">
-                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
+                        <a href="index.php"><img src="img/logo.gif" height="50px"></a>
                         <h4>Reset Password</h4>
                         <input type="password" class="login-input2" placeholder="New Password" required style="max-width:304px;"/>
                         <input type="password" class="login-input" placeholder="Confirm Password" required style="max-width:304px;"/>

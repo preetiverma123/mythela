@@ -13,6 +13,9 @@ use App\Partner_fleet;
 use App\Transaction;
 use Razorpay\Api\Api;
 use App\Booking_confirm;
+
+use Validations\Validate as Validations;
+
 class BookController extends Controller
 {
   public function index(Request $request){
@@ -131,18 +134,26 @@ public function maptracking(){
   return view('front/maptracking');
 }
 public function partnerfleet(Request $request){
-      $data['name']            =!empty($request->name);
-      $data['mobile']          =!empty($request->mobile);
-      $data['city']            =!empty($request->city);
-      
-      $inserId = Partner_fleet::add($data);
-          $this->status   = true;
-          $this->modal    = true;
-          $this->alert    = true;
-          $this->message  = "Submitted Successfully.";
-          $this->redirect = url('/partner-fleet');
-  
   return view('front/partner-fleet');
+}
+public function partnerfleetsubmit(Request $request, $id){
+    // $validation = new Validations($request);
+    // $validator  = $validation->enquiry();
+    // if($validator->fails()){
+    //     $this->message = $validator->errors();
+    //     }else{
+        $data['name']            =!empty($request->name)?$request->name:'';
+        $data['mobile']          =!empty($request->mobile)?$request->mobile:'';
+        $data['city']            =!empty($request->city)?$request->city:'';
+        
+        $inserId = Partner_fleet::add($data);
+            $this->status   = true;
+            $this->modal    = true;
+            $this->alert    = true;
+            $this->message  = "Submitted Successfully.";
+            $this->redirect = url('/partner-fleet');
+    // }
+    return view('front/partner-fleet');
 }
 public function maps_apk(Request $request, $booking_id){
    $book=Booking::where('id', $booking_id)->first();

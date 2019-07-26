@@ -34,7 +34,7 @@
                     <br/>
                     <form action="logincode.php" method="post" enctype="multipart/form-data">
                     <div class="left-desk login">
-                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
+                        <a href="index.php"><img src="{{asset('img/logo.gif')}}" height="50px"></a>
                         <h4>Forgot Password</h4>
                         <input type="text" class="login-input" placeholder="Email" required style="max-width:304px;"/>
                         

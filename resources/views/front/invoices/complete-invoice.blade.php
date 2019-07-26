@@ -29,7 +29,7 @@
 				<h4>{{date('d M Y', strtotime($blist['updated_at']))}}</h4>
 			</div>
 			<div class="col-xs-6 text-right">
-				<img src="https://mythela.com/img/giphy.gif" height="57px" style="padding:8px;"><br/>
+				<img src="{{asset('img/logo.gif')}}" height="57px" style="padding:8px;"><br/>
 			</div>
 		</div>
 		<div class="row">
@@ -238,7 +238,7 @@
 			<br/>
 			<div class="row ptb10">
 				<div class="col-xs-6">
-					<img src="https://mythela.com/img/giphy.gif" height="57px" style="padding:8px;"><br/>
+					<img src="https://mythela.com/img/logo.gif" height="57px" style="padding:8px;"><br/>
 					<b>RJM Enterprises Pvt. Ltd.</b><br/>
 					c-212 1Address 1 1 es dshvbjdshjgvbdswjhvbgfdbh f sdfsdfsd fsd f sdf dsfdsd <br/>
 					121212

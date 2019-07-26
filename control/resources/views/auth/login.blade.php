@@ -57,7 +57,7 @@ hr {
         <form method="post">
           {{csrf_field()}}
           <div class="left-desk login">
-            <a href="{{route('home')}}"><img src="{{asset('img/giphy.gif')}}" height="50px"></a>
+            <a href="{{route('home')}}"><img src="{{asset('img/logo.gif')}}" height="50px"></a>
             <h4>Admin Login</h4>
             @if(Session::get('msg'))
             <div class="alert alert-{{Session::get('msg')['type']}} alert-block">
@@ -71,7 +71,7 @@ hr {
             {{ $errors->first('password') }}
             <button type="submit" class="btn btn-skin" style="max-width:304px;width:100%;">LOGIN</button>
             <br/>
-            <a href="#">Forgot Password ?</a>
+            <!-- <a href="#">Forgot Password ?</a> -->
           </div>
         </form>
       </div>

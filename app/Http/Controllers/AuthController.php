@@ -52,7 +52,7 @@ class AuthController extends Controller
     return $Msg;
   } 
   public function sent_otpfn(Request $request){
-    print_r($_POST);die();
+    // print_r($_POST);die();
     $Msg['msg']='';
     $Msg['action']='';
     $Msg['otp']='';

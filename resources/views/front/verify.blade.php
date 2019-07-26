@@ -27,7 +27,7 @@
                 <div class="col-md-4 col-sm-12 text-center">
                     <!-- login-->
                     <div class="left-desk login">
-                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
+                        <a href="index.php"><img src="img/logo.gif" height="50px"></a>
                         <h4>Enter Your Mobile Number</h4>
                         <p class="para">OTP will be sent for verification</p>
                         <input type="text" class="login-input" placeholder="+91 Enter Your Number"/>
@@ -41,7 +41,7 @@
                         <input type="hidden" name="name" class="login-input" value="<?php echo $name; ?>" />
                         <input type="hidden" name="email" class="login-input" value="<?php echo $email; ?>" />
                         <input type="hidden" name="mobile" class="login-input" value="<?php echo $mobile; ?>" />
-                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
+                        <a href="index.php"><img src="img/logo.gif" height="50px"></a>
                         <h4 class="verify_h_1">Verify & Login</h4>
                         <p class="para">Enter the OTP sent to 8765530888</p>
                         <input type="text" name="otp" class="login-input" placeholder="Enter 4 digit OTP"/>
@@ -51,7 +51,7 @@
                     </form>
                     <!-- signup-->
                     <div class="left-desk signup">
-                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
+                        <a href="index.php"><img src="img/logo.gif" height="50px"></a>
                         <h4>Create Your Account</h4>
                         <p class="para">Please fill the details to SignUp</p>
                         <input type="text" class="form-controll" placeholder="Enter Full Name"/>

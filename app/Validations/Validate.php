@@ -21,179 +21,16 @@ class Validate
 			'name' 				=> ['required','string'],
 			'last_name' 		=> ['nullable','string'],
 			'phone_code' 		=> ['nullable','required_with:mobile_number','string'],
-			'mobile_number' 	=> ['required','numeric'],
+			'mobile' 	        => ['required','numeric'],
 			'req_mobile_number' => ['required','required_with:phone_code','numeric'],
-			'country' 			=> ['required','string'],
-			'address'           => ['nullable','string','max:1500'],
-			'description'       => ['required','string'],
-			'key_points'       	=> ['required','string','max:1500'],
-			'title'             => ['required','string'],
-			'profile_picture'   => ['required','mimes:doc,docx,pdf'],
-			'pin_code' 			=> ['nullable','max:6','min:4'],
-			'type' 	           	=> ['required','string'],
-			'phone' 	        => ['required','numeric','digits:10'],
-			'location' 	        => ['required','string'],
-			'password'          => ['required','string','max:50','min:6'],
-			'price'				=> ['required','numeric'],
-			'pricing'			=> ['nullable','numeric'],
-			'start_from'		=> ['required'],
-			'photo'				=> ['required','mimes:jpg,jpeg,png'],
-			'photomimes'		=> ['nullable','mimes:jpg,jpeg,png'],
-			'photo_null'		=> ['nullable'],
-			'slug_no_space'		=> ['required','alpha_dash','max:255'],
-			'password_check'	=> ['required'],
-			'newpassword'		=> ['required','max:10'],
-			'area'				=> ['required','numeric'],
-			'areaProperty'		=> ['nullable','numeric'],
-			'gallery'			=> ['required','mimes:jpg,jpeg,png'],
-			'gallery_null'		=> ['nullable'],
-			'url' 				=> ['required','url'],
-			'pincode' 			=> ['nullable','min:6','max:6'],
-            'req_pincode'       => ['required','min:6','max:6'],
-			'req_adhaar' 		=> ['required','min:12','max:12'],
-			'commission' 		=> ['nullable','numeric','between:0,99.99'],
-            'amount'            => ['required','numeric'],
-			'late_amount'		=> ['nullable','numeric'],
-            'action'            => ['required'],
-			'percentage'		=> ['required','numeric','between:0,99.99'],
-			'password_null' 	=> ['nullable'],
+			'city' 			    => ['required','string'],
+			
 		];
 		return $validation[$key];
 	}
 
-	public function login(){
-        $validations = [
-            'email' 		       	 => $this->validation('req_email'),
-						'password'       	   => $this->validation('password'),
-			    ];
-        $validator = \Validator::make($this->data->all(), $validations,[
-        		'email.required'     => 'E-mail is required.',
-        		'password.required'  => 'Password is required.',
-        ]);
-        return $validator;		
-	}
-
-	public function custLogin(){
-        $validations = [
-        		'login'							 => $this->validation('name'),
-            'phone' 		       	 => $this->validation('phone'),
-						'password'       	   => $this->validation('password'),
-			    ];
-        $validator = \Validator::make($this->data->all(), $validations,[
-        	'login.required'  		 =>	'Please Select Any of the one field.',
-        	'phone.required'  		 =>	'Phone is required.',
-        	'phone.numeric'  			 =>	'Phone should be in numeric format.',
-					'password.required'    => 'Password is required.',
-
-				]);
-        return $validator;		
-	}
-
-	public function search(){
-		$validations = [
-        	'filter_propertystatus'		  => $this->validation('name'),
-        	'filter_propertycategory' 	=> $this->validation('name'),
-        	'filter_city'               => $this->validation('name'),
-        	'filter_address'            => $this->validation('name'),
-        ];
-        $validator = \Validator::make($this->data->all(), $validations,[
-        	'filter_propertystatus.required'   => 'Property Type is Required.',
-        	'filter_propertycategory.required' => 'Property Category is Required.',
-        	'filter_city.required'             => 'City is Required.',
-        	'filter_address.required'          => 'Address is Required.',
-        ]);
-        return $validator;
-	}
-
-	public function partnersfleet(){
-        $validations = [
-        		'name'			  => $this->validation('name'),
-                'mobile' 		  => $this->validation('mobile'),
-			    'city'            => $this->validation('city'),
-						
-				];
-        $validator = \Validator::make($this->data->all(), $validations,[
-        		'name.required'					=> 'Please Enter name.',
-                'mobile.required'                 => 'Please Enter Mobile Number.',
-                'city.required'                 => 'Please Select Any of the one field.',
-						
-        ]);
-        return $validator;		
-	}
-
-	public function createpropertyCategory($action='add'){
-        $validations = [
-            'name' 		        => $this->validation('name'),
-						'slug'  			=> array_merge($this->validation('slug_no_space'),[Rule::unique('property_categories')]),
-    	];
-				if($action =='edit'){
-					$validations['slug'] = array_merge($this->validation('slug_no_space'),[
-						Rule::unique('property_categories')->where(function($query){
-							$query->where('id','!=',$this->data->id);
-						})
-					]);
-				}
-      $validator = \Validator::make($this->data->all(), $validations,[
-      	'name.required'     			=> 'Category Name is Required.',
-      	'slug.required'     			=> 'Category Slug is Required.',
-      	'slug.unique'     				=> 'This Category Slug has already been taken.',
-      	'slug.alpha_dash'     			=> 'No spaces allowed in category slug.The Slug may only contain letters, numbers, dashes and underscores.',
-      ]);
-      return $validator;		
-		}
-
-		public function staticpage($action='edit'){
-        $validations = [
-            'title' 					=> $this->validation('name'),
-            'description' 		=> $this->validation('description'),
-    	];
-      $validator = \Validator::make($this->data->all(), $validations,[
-      	'title.required'     			=> 'Title is Required.',
-      	'description.required'    => 'Description is Required.',
-      ]);
-      return $validator;		
-		}
-
-	public function addLead($action='add'){
-        $validations = [
-            'name' 		        => $this->validation('name'),
-            'address' 		    => $this->validation('name'),
-            'email' 		    => array_merge($this->validation('req_email'),[Rule::unique('lead')]),
-            'phone' 		    => array_merge($this->validation('phone'),[Rule::unique('lead')]),
-            'available' 		=> $this->validation('name'),
-            'property_id' 		=> $this->validation('name'),
-            'followup' 			=> $this->validation('name'),
-            'status' 			=> $this->validation('name'),
-            'remarks' 			=> $this->validation('name'),
-    	];
-		if($action =='edit'){
-			$validations['email'] = array_merge($this->validation('req_email'),[
-				Rule::unique('lead')->where(function($query){
-					$query->where('id','!=',$this->data->id);
-				})
-			]);
-			$validations['phone'] = array_merge($this->validation('phone'),[
-				Rule::unique('lead')->where(function($query){
-					$query->where('id','!=',$this->data->id);
-				})
-			]);
-		}
-        $validator = \Validator::make($this->data->all(), $validations,[
-        	'name.required'     			=> 'Name is Required.',
-        	'address.required'     			=> 'Address is Required.',
-        	'email.required'     			=> 'E-mail is Required.',
-        	'email.unique'     				=> 'E-mail is already taken.',
-        	'phone.required'     			=> 'Phone Number is Required.',
-        	'phone.unique'     				=> 'Phone Number is already taken.',
-        	'available.required'     		=> 'Availability is Required.',
-        	'property_id.required'     		=> 'Property Name is Required.',
-        	'followup.required'     		=> 'Follow Up date is Required.',
-        	'status.required'     			=> 'Lead Status is Required.',
-        	'remarks.required'     			=> 'Lead Remarks is Required.',
-        ]);
-        return $validator;		
-	}
-
+		
+	
 	public function addPurchase($action='add'){
         $validations = [
             'project_id' 		=> $this->validation('name'),
@@ -365,17 +202,15 @@ class Validate
 
 	public function enquiry($action='add'){
         $validations = [
-            'customer_name'         => $this->validation('name'),
-            'customer_contact'      => $this->validation('phone'),
-            'email'                 => $this->validation('req_email'),
+            'name'        => $this->validation('name'),
+            'mobile'      => $this->validation('mobile'),
+            'city'        => $this->validation('city'),
         ];
         
         $validator = \Validator::make($this->data->all(), $validations,[
-            'customer_name.required'        =>  'Customer Name is required.',
-            'customer_contact.required'     =>  'Customer Contact is required.',
-            'customer_contact.numeric'      =>  'Contact Number should be numeric.',
-            'customer_contact.digits'       =>  'Contact Number should not be greater than 10 digits.',
-            'email.required'                =>  'Customer E-mail is required.',
+            'name.required'                 =>  'Name is required.',
+            'mobile.required'               =>  'Contact is required.',
+            'city.numeric'                  =>  'City is required.',
 
         ]);
         return $validator;      

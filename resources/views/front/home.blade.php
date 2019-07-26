@@ -158,13 +158,13 @@ else $('.depart').hide(); // hide div if value is not "custom"
 </div>
 </div>
 <br/>
-<div class="container bg-3 text-center">    
+<div class="container bg-3 text-center wow fadeInUp">    
   <h2>Logistics @ Ogonn</h2>
   <p class="info">We have started the bidding process in logistics services, So that every user will choose the minimum price for their transportation. All drivers will quote minimum price for your booking, So that you can choose any of the driver you wish to confirm their bid. This is the best way you can use our services at minimum price.</p>
   <img src="{{asset('img/ul.png')}}" width="50%">
   <br/><br/>
 </div>
-<div class="container bg-3 text-center">    
+<div class="container bg-3 text-center wow fadeInUp">    
   <div class="row">
     <div class="col-sm-4"> 
       <div class="thela-item">
@@ -192,13 +192,13 @@ else $('.depart').hide(); // hide div if value is not "custom"
     </div>
   </div>
 </div><br><hr/>
-<div class="container bg-3 text-center">    
+<div class="container bg-3 text-center wow fadeInUp">    
   <h2>For Every Occasion</h2>
   <p class="info">We offer city taxis, inter-city cabs, and logistic transportation</p>
   <img src="{{asset('img/ul.png')}}" width="50%">
   <br/><br/>
 </div>
-<div class="container bg-3">    
+<div class="container bg-3 wow fadeInUp">    
   <div class="row">
     <div class="col-md-3">
       <div class="thela-item2">

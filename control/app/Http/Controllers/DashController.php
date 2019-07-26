@@ -62,19 +62,22 @@ class DashController extends Controller
 		return view('dash/dashboard', ['bookings'=>$bookings, 'ongoing'=>$booking_o, 'completed'=>$booking_c, 'cancelled'=>$booking_cancel]);
 	}
 	public function allbooking(){
+		// print_r($_POST);die();
 		$bookings = DB::connection('ogonn_ogonn')->table('users')->join('bookings', 'users.id', '=', 'bookings.user_id')->get();
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function ongoingbooking(){
-		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('status', 'ongoing')->get();
+		// print_r($_POST);die();
+		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->get();
+		
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function completedbooking(){
-		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('status', 'completed')->get(); 
+		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->get(); 
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function cancelledbooking(){
-		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('status', 'expired')->get(); 
+		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->get(); 
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function managecustomer(){
@@ -92,7 +95,7 @@ class DashController extends Controller
 	public function managevehicle(){
 		if(role(Auth::user()['role_id'])=="superadmin"){
 			$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
-		}
+		}	
 		if(role(Auth::user()['role_id'])=="admin"){
 			$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
 		}

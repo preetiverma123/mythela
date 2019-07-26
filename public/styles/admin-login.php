@@ -39,7 +39,7 @@ transform: translateY(-50%);text-align:center;}
                     <br/>
                     <form action="logincode.php" method="post" enctype="multipart/form-data">
                     <div class="left-desk login">
-                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
+                        <a href="index.php"><img src="img/logo.gif" height="50px"></a>
                         <h4>Admin Login</h4>
                         <input type="text" class="login-input2" placeholder="Username" required style="max-width:304px;"/>
                         <input type="text" class="login-input" placeholder="Password" required style="max-width:304px;"/>

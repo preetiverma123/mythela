@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <p class="text-justify"><b><span style="font-size:23px;">Ogonn</span> Technologies</b> Provide Best Logistic and transport Solution for On-Road Transportation Services. We offer a hassle-free movement of goods for cross Industry warehouses with an end-to-end online tracking solution at a minimum pricing good service and back up every shipment with latest Technology features & professional Customer Support. </p>
+                    <p class="text-justify"><b><span style="font-size:23px;" class="text-style">Ogonn</span> Technologies</b> Provide Best Logistic and transport Solution for On-Road Transportation Services. We offer a hassle-free movement of goods for cross Industry warehouses with an end-to-end online tracking solution at a minimum pricing good service and back up every shipment with latest Technology features & professional Customer Support. </p>
                     <p class="text-justify">Our vision is to be globally recognized by importers and exporters as a leading provider of specialized transport logistics management services in India. This we achieve through understanding the complexities associated with trading in India and having the right people, Open systems and considered partnerships to enable us to continuously exceed our clients’ expectations.</p>
                 </div>
                 <div class="col-md-5">
@@ -23,12 +23,9 @@
                     <p class="text-justify">We believe in partnerships with our clients, as their success ultimately determines our success. As a result, we place high value on professionalism, trust, integrity and building long term relationships.</p>
                     <h3>Associated Companies</h3>
                     <ol>
-                        <li>Yogesh Kumar Tarunesh Kumar  Lucknow</li>
-                        <li>Shivgeet Sales Pvt Ltd. Lucknow</li>
-                        <li>R B Enterprises Barabanki</li>
-                        <li>J P Product Barabanki</li>
-                        <li>Kishan Tractor Biswan Sitapur</li>
-                        <li>K K Enterprises</li>
+                        <li>M K Enterprises Lucknow</li>
+                        <li>M K Enterprises Allahabad</li>
+                        <li>M K Enterprises Gorakhpur</li>
                     </ol>
                     <h3>Our Fleet</h3>
                     <p class="text-justify">Our fleet plan is very simple and new way for freight planning for transporter carrier agent and broker.

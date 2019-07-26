@@ -6,13 +6,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="{{asset('css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('css/sweetalert2.css')}}">
+	<link rel="stylesheet" href="{{asset('css/animate.css')}}">
+	<link rel="stylesheet" href="{{asset('css/style.css')}}">
 	<link href='https://fonts.googleapis.com/css?family=Convergence' rel='stylesheet'>
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="{{asset('js/sweetalert2.js')}}"></script>
+	<script src="{{asset('js/wow.js')}}"></script>
 	<script src="{{asset('js/script.js')}}"></script>
 	<link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
 </head>
@@ -54,16 +56,18 @@
 <nav class="navbar navbar-inverse">
 	<div class="container">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>                        
 			</button>
+			<div class="close-header-layer"></div>
+          	<div class="close-menu"></div>
 			<a class="navbar-brand movecar" href="{{route('home')}}">
-				<!-- <img src="{{asset('img/giphy.gif')}}"> -->
+				<!-- <img src="{{asset('img/logo.gif')}}"> -->
 			</a>
 		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
+		<div class="navbar-collapse do-main-menu">
 			<ul class="nav navbar-nav">
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

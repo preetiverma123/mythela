@@ -19,7 +19,7 @@
                 <div class="col-md-4 col-sm-12 text-center">
                     <!-- login-->
                     <div class="left-desk login">
-                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
+                        <a href="index.php"><img src="img/logo.gif" height="50px"></a>
                         <h4>Enter Your Mobile Number</h4>
                         <p class="para">OTP will be sent for verification</p>
                         <input type="text" class="login-input" placeholder="+91 Enter Your Number"/>
@@ -28,7 +28,7 @@
                     </div>
                     <!-- verify-->
                     <div class="left-desk otp">
-                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
+                        <a href="index.php"><img src="img/logo.gif" height="50px"></a>
                         <h4>Verify & Login</h4>
                         <p class="para">Enter the OTP sent to 8765530888</p>
                         <input type="text" class="login-input" placeholder="Enter 4 digit OTP"/>
@@ -37,7 +37,7 @@
                     </div>
                     <!-- signup-->
                     <div class="left-desk signup">
-                        <a href="index.php"><img src="img/giphy.gif" height="50px"></a>
+                        <a href="index.php"><img src="img/logo.gif" height="50px"></a>
                         <h4>Create Your Account</h4>
                         <p class="para">Please fill the details to SignUp</p>
                         <input type="text" class="form-controll" placeholder="Enter Full Name"/>
