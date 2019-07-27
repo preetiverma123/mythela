@@ -9,8 +9,8 @@
       <small>Partners Detail</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#"> Manage Partners</a></li>
+      <li><a href="{{url('dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="{{url('dashboard/manage-partners')}}"> Manage Partners</a></li>
       <li class="active"> Partners Detail</li>
     </ol>
   </section>
@@ -184,6 +184,7 @@
       url: "{{route('status')}}",
       data:{ _token:"{{csrf_token()}}", 'user_id':$(this).attr('u-id'), docs_id:$(this).attr('docs_id'), action:$(this).attr('val-act'), status:$(this).attr('val')},
       success: function(response){
+        // window.location.href = "{{url('dashboard/manage-partners')}}";
         location.reload();
       }
     });

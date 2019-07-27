@@ -5,8 +5,8 @@
     <div class="row frm1">
         <div class="scrollmenu book-ul">
             <a class="transport" div-act="step1logistic" href="javascript:void(0);"><span class="tra active-btn">TRANSPORT</span></a>
-            <a class="incity" div-act="step1-incity" href="javascript:void(0);"><span class="in">INCITY</span></a>
-            <a class="outcity" div-act="outstep1" href="javascript:void(0);"><span class="out">OUTCITY</span></a>
+            <a class="incity" div-act="step1-incity" href="javascript:void(0);"><span class="in">MYBIKE</span></a>
+            <a class="outcity" div-act="outstep1" href="javascript:void(0);"><span class="out">MYCAR</span></a>
             <a class="rentals" div-act="rentalstep1" href="javascript:void(0);"><span class="ren">RENTALS</span></a>
         </div>
     </div>

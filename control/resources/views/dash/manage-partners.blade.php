@@ -6,12 +6,12 @@
   <section class="content-header">
     <h1>
       Manage Partners
-      <small>Customers</small>
+      <small>Partners</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#"> Manage Customers</a></li>
-      <li class="active"> Customers</li>
+      <li><a href="{{url('dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="javascript:void(0);"> Manage Partners</a></li>
+      <li class="active"> Partners</li>
     </ol>
   </section>
   <!-- Main content -->
@@ -83,6 +83,12 @@
     </section>
     <!-- /.content -->
     <script>
+      $(document).ready(function(){
+        $(".status-action").click(function(){
+          window.location.href = "{{url('dashboard/manage-partners')}}";
+        });
+      });
+
       $(document).on(' click', '.status-action', function(event){
           event.preventDefault();
           var act=$(this).attr('d-act');
@@ -100,7 +106,7 @@
             url: "{{route('status')}}",
             data:{ _token:"{{csrf_token()}}", action:act, status:status, user_id:user_id},
             success: function(response){
-              location.reload();
+              // window.location.href = "{{url('dashboard/manage-partners')}}";
             }
           });
         });

@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="border">
-            <a class="red" href="complete-kyc.php"><i class="fa fa-address-card-o" aria-hidden="true"></i> Complete KYC</a>
+            <a class="red" href="javascript:void(0);"><i class="fa fa-address-card-o" aria-hidden="true"></i> Complete KYC</a>
         </div>
         <div class="border" style="display:none;">
             <a class="blue"><i class="fa fa-address-card-o" aria-hidden="true"></i> KYC Pending <small>for approval</small> </a>

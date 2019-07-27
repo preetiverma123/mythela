@@ -34,7 +34,7 @@
                                                 <option>Select Your City</option>
                                                 <option>Lucknow</option>
                                                 <option>Kanpur</option>
-                                                <option>Allahabad</option>
+                                                <option>Prayagraj</option>
                                                 <option>Varanasi</option>
                                             </select>
                                         </div>

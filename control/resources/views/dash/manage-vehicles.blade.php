@@ -9,8 +9,8 @@
       <small>Vehicles</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#"> Manage Vehicles</a></li>
+      <li><a href="{{url('dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Manage Vehicles</a></li>
       <li class="active"> Vehicles</li>
     </ol>
   </section>
@@ -35,31 +35,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($vehicles as $vehicle)
-                <tr>
-                  @php 
-                   if($vehicle->city_id){
-                     $cfirst = DB::connection('ogonn_ogonn')->table('cities')->where('id', $vehicle->city_id)->first();
-                   }
-                   if($vehicle->state_id){
-                     $sfirst = DB::connection('ogonn_ogonn')->table('states')->where('id', $vehicle->state_id)->first();
-                   }
-                   $vfirst = DB::connection('ogonn_ogonn')->table('vehicle_lists')->where('id', $vehicle->vehicle_type_id)->first();
-                  @endphp
-                  <td>{{$vfirst->name}}</td>
-                  <td>{{$vehicle->transport}}</td>
-                  <td>{{$vehicle->vehicle_num}}</td>
-                  <td>{{$vehicle->unit}}</td>
-                  <td>{{$vehicle->weight}}</td>
-                  <td>{{@$sfirst->name}}</td>
-                  <td>{{@$cfirst->name}}</td>
-                  <td>{{$vehicle->vehicle_status}}</td>
-                  <td>
-                    <a href="{{route('vehicle.detail', ['id'=>encode($vehicle->id)])}}" class="btn btn-xs btn-primary">
-                      <i class="fa fa-eye" aria-hidden="true"></i></a>
-                    </td>
-                  </tr>
-                  @endforeach
+                
                 </tbody>
               </table>
             </div>

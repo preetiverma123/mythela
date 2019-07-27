@@ -5,11 +5,11 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Detail Customer
-      <small>Detail Detail</small>
+      Customer's Detail 
+      <small>Detail</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="{{url('dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#"> Detail Partners</a></li>
       <li class="active"> Detail Detail</li>
     </ol>
@@ -64,14 +64,15 @@
   <!-- /.row -->
 </section>
 <script>
+  
   $(document).on(' click', '.status', function(event){
     event.preventDefault();
     $.ajax({
-      type: "put",
+      type: "PUT",
       url: "{{route('status')}}",
       data:{ _token:"{{csrf_token()}}", user_id:$(this).attr('user_id'), action:$(this).attr('val-act'), status:$(this).attr('val')},
       success: function(response){
-        window.location = "{{route('manage.customers')}}";
+        window.location.href = "{{url('dashboard/manage-customers')}}";
       }
     });
   });

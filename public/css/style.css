@@ -1,4 +1,4 @@
-.banner-bg{background-image:url(../img/Banner-img.png);background-repeat:no-repeat;background-size:cover;color:#fff;min-height:490px;}
+.banner-bg{background-image:url(../img/Banner-img.jpg);background-repeat:no-repeat;background-size:cover;color:#fff;}
 .banner-bg2{background-image:url(../img/banner2.jpg);background-repeat:no-repeat;background-size:cover;color:#fff;}
 .banner-bg3{background-image:url(../img/banner3.jpg);background-repeat:no-repeat;background-size:cover;color:#fff;}
 .banner-bg4{background-image:url(../img/banner4.jpg);background-repeat:no-repeat;background-size:cover;color:#fff;}
@@ -6,7 +6,7 @@
 .banner-bg6{background-image:url(../img/banner6.jpg);background-repeat:no-repeat;background-size:cover;color:#fff;}
 .banner-bg7{background-image:url(../img/banner7.jpg);background-repeat:no-repeat;background-size:cover;color:#fff;}
 .right-desk{padding-left:0px;padding-right:0px;background-image:url(../img/bg/bg1.jpg);background-repeat:no-repeat;overflow-y:hidden !important;}
-.right-desk2{padding-left:0px;padding-right:0px;background-image:url(../img/bg/bg2.jpg);background-repeat:no-repeat;overflow-y:hidden !important;}
+.right-desk2{padding-left:0px;padding-right:0px;background-image:url(../img/bg/bg7.jpg);background-size:cover;background-repeat:no-repeat;overflow-y:hidden !important;}
 .right-desk4{padding-left:0px;padding-right:0px;background-image:url(../img/bg/bg4.jpg);background-repeat:no-repeat;overflow-y:hidden !important;}
 .banner-bg{position: relative;}
 .banner-bg:before,.banner-bg:after{
@@ -21,35 +21,51 @@
     right:0;
     background-image: linear-gradient(90deg,rgba(46,54,59,0),#c70304);
 }
-.text-style{
-
+.text-style {
+    text-shadow: 0 0 3px #ffa501;
+    font-size: 18px;
+    color: #ff0000;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-style: italic;
+    font-variant: normal;
 }
 .movecar{
     transform: translate(180deg);
     position: relative;
 }
-/*.movecar:before{
+.movecar:before{
     content: "Ogonn";
     position: absolute;
     top: 14px;
     color: #e23233;
-    left: 0;
+    left: 120px;
     font-family: Georgia, Times, "Times New Roman", serif;
     font-style: italic;
     font-variant: normal;
     text-shadow: 0 0 3px #ffa501;
     font-size: 28px;
-}*/
+}
 .movecar:after{
     content: "";
     position: absolute;
     top: 0;
-    background-image: url(../img/logo.gif);
+    background-image: url(../img/giphy2.gif);
     background-position: center center;
-    height: 60px;
+    height: 64px;
     width: 120px;
     margin-top: -7px;
-    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.right-desk-gen:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: rgba(0,0,0,.4);
 }
 @-webkit-keyframes bouncephone {
     0% { transform: translateX(-10px)  }
