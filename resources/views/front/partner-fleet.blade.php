@@ -14,7 +14,7 @@
                                    Enter your details below.<br/> Our team will contact you in the next 24 hours.
                                 </div>
                             </div>
-                            <form id="form-contact" role="become-partner" method="post" >
+                            <form role="become-partner" method="post" >
                                 {{csrf_field()}}
                                 <div class="text-left">
                                     <div class="pickup row">
@@ -40,7 +40,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-skin btn-block" data-request="ajax-submit" data-target='[role="become-partner"]'>SUBMIT</button>
+                                <button class="btn btn-skin btn-block">SUBMIT</button>
                             </form>
 							</div>
 							  

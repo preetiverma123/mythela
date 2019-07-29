@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Validations\Validate as Validations;
 use DB;
 use Mail;
 use App\Role;
@@ -91,15 +92,20 @@ class DashController extends Controller
 		}
 		return view('dash/manage-partners', ['users'=>$users]);
 	}
+
 	public function managevehicle(){
-		// if(role(Auth::user()['role_id'])=="superadmin"){
-		// 	$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
-		// }	
-		// if(role(Auth::user()['role_id'])=="admin"){
-		// 	$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
-		// }
-		return view('dash/manage-vehicles');
+
+		if(role(Auth::user()['role_id'])=="customer"){
+			$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
+			// dd($vehicles);
+		}	
+		if(role(Auth::user()['role_id'])=="admin"){
+			$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
+		}
+		// $vehicles = [];
+		return view('dash/manage-vehicles', ['vehicles' => $vehicles]);
 	}
+
 	public function vehicle_detail(Request $request, $vehicle_id){
 		$vehicle_first = DB::connection('ogonn_ogonn')->table('photos')->where('vehicle_id', decode($vehicle_id))->join('vehicles', 'photos.vehicle_id', '=', 'vehicles.id')->join('users', 'vehicles.vendor_id', '=', 'users.id')->selectRaw('users.*, vehicles.* , photos.*')->first();
 		return view('dash/detail-vehicle', ['vehicle_first'=>$vehicle_first]);
@@ -378,22 +384,46 @@ class DashController extends Controller
 		return view('dash/city-list', ['clist'=>$clist]);
 	}
 	public function reset_password(Request $request){
-		if($request->isMethod('post')){
-			$this->validator($request->input(), 'reset');
-			$oned=User::where('id', Auth::user()['id'])->first();
-			if(Hash::check($request->input('old_password'), $oned['password'])){
-				if($request->input('password')==$request->input('password_confirm')){
-					User::where('id', Auth::user()['id'])->update(['password'=>Hash::make($request->input('password_confirm'))]);
-					return redirect()->back()->with('msg', ['type'=>'success','text'=>'Your password has been reset.']);
-				}else{
-					return redirect()->back()->with('msg', ['type'=>'warning','text'=>'Confirm password do not match']);
-				}
-			}else{
-				return redirect()->back()->with('msg', ['type'=>'warning','text'=>'Old password do not match']);
-			}
-		}
-		return view('dash/change-password');
-	}
+        $data['view'] = 'dash.change-password';
+        $data['dash'] = User::find(Auth::user()->id);
+        return view('dash.change-password',$data);
+    }
+	public function adminreset_password(Request $request){
+		$validation = new Validations($request);
+        $validator  = $validation->changepassword();
+        if ($validator->fails()) {
+            $this->message = $validator->errors();
+        }else{
+		// $validator = validator::make($request->all(),['pasword'=>'required','new_password'=>'required','confirm_password'=>'required'],[]);
+		// if($validator => passes()){
+
+		// }
+		$user = User::where('id',Auth::user()->id);
+          if ($request->password){
+            if (Hash::check($request->password, $user->password)){
+                if ($request->new_password == $request->confirm_password){
+                    $input['password'] = Hash::make($request->new_password);
+                }else{
+                    $this->message  =  $validator->errors()->add('confirm_password', 'Confirm Password Does not match.');
+                    return $this->populateresponse();
+                }
+            }else{
+                $this->message  =  $validator->errors()->add('confirm_password', 'Current Password Does not match.');
+                    return $this->populateresponse();
+            }
+        }
+        $user->update($input);
+       
+        $this->message = 'Admin Password has been Updated Successfully.';
+        $this->modal    = true;
+        $this->alert    = true;
+        $this->status = true;
+        // $this->redirect = url('admin/changepassword');
+     	}
+        return view('dash/change-password');
+    }
+
+	
 	public function manage_credit_limit(Request $request, $id=""){
 		if($request->isMethod('post')){
 			$this->validator($request->input(), 'credit');

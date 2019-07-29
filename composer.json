@@ -37,12 +37,16 @@
             "dont-discover": []
         }
     },
+    
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Validations\\":"app/Validations",
+            "Perks\\":"app/Perks",
+            "Helper\\":"app/Helper"
         },
         "files": [
-            "app/Helpers/Helper.php"
+      "app/Helper/apphelper.php"
         ],
         "classmap": [
             "database/seeds",

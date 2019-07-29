@@ -30,6 +30,9 @@
 <link rel="stylesheet"
 href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style type="text/css">
+  .skin-red-light .main-header .navbar .nav>li>a{height: 50px !important;}
+</style>
 </head>
 <body class="hold-transition skin-red-light sidebar-mini">
   <div class="wrapper">
@@ -61,7 +64,7 @@ href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,30
                   <img src="{{asset('dash-lib/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                   <p>
                     {{Auth::user()['first_name']}} {{Auth::user()['last_name']}}
-                    <small>OGonn.com</small>
+                    <small>Ogonn.com</small>
                   </p>
                 </li>
                 <!-- Menu Footer-->

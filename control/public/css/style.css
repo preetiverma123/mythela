@@ -8,6 +8,8 @@
 .right-desk{padding-left:0px;padding-right:0px;background-image:url(../img/bg/bg1.jpg);background-repeat:no-repeat;overflow-y:hidden !important;}
 .right-desk2{padding-left:0px;padding-right:0px;background-image:url(../img/bg/bg2.jpg);background-repeat:no-repeat;overflow-y:hidden !important;}
 .right-desk4{padding-left:0px;padding-right:0px;background-image:url(../img/bg/bg4.jpg);background-repeat:no-repeat;overflow-y:hidden !important;}
+.skin-red-light .main-header .navbar .nav>li>a{height: 50px;}
+
 @media screen and (min-height: 930px) {
 .right-desk-gen{height:930px;}
 }

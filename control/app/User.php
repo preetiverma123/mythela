@@ -25,4 +25,15 @@ protected $hidden = [
 public function role(){
   return $this->belongsTo('App\Role');
  }
+
+ public static function change($userID,$data){
+    $isUpdated = false;
+    $table_users_realestate = \DB::table('ogonn_ogonn');
+    if(!empty($data)){
+        $table_users_realestate->where('id','=',$userID);
+        $isUpdated = $table_users_realestate->update($data); 
+    }
+    return (bool)$isUpdated;
 }
+}
+
