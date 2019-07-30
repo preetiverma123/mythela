@@ -36,7 +36,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Validations\\":"app/Validations",
+            "Perks\\":"app/Perks",
         },
         "files": [
             "app/Helpers/Helper.php"

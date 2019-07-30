@@ -38,7 +38,7 @@
                   <tr>
                     <td colspan="4">
                       @if(@$vehicle_first->profile_pic)
-                      <img src="{{'https://mythela.com/img/users-pic/'.@$vehicle_first->profile_pic}}" width="150px" height="150px" class="img-circle">
+                      <img src="{{'https://ogonn.in/img/users-pic/'.@$vehicle_first->profile_pic}}" width="150px" height="150px" class="img-circle">
                       @else
                       N/A
                       @endif
@@ -182,10 +182,12 @@
     <script>
       $(document).on(' click', '.status', function(event){
         event.preventDefault();
+        alert($(this).attr('veh_id'));
         $.ajax({
           type: "put",
           url: "{{route('status')}}",
-          data:{ _token:"{{csrf_token()}}", vehicle_id:$(this).attr('veh_id'), action:$(this).attr('val-act'), status:$(this).attr('val')},
+          data:{ _token:"{{csrf_token()}}", vehicle_id:$(this).attr('veh_id'), action:$(this).attr('val-act'), 
+          status:$(this).attr('val')},
           success: function(response){
             location.reload();
           }

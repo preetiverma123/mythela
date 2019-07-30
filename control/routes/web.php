@@ -51,7 +51,7 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'], function(){
     Route::get('/manage-accounts', 'DashController@manage_accounts')->name('manage.accounts');
     Route::get('/detail-earning/{id}', 'DashController@detail_earning')->name('detail.earning');
     Route::get('/manage-vehicle', 'DashController@managevehicle')->name('manage.vehicle');
-    Route::get('/vehicle-detail/{id}', 'DashController@vehicle_detail')->name('vehicle.detail');
+    Route::get('/vehicle-detail/{vehicle_id}', 'DashController@vehicle_detail')->name('vehicle.detail');
     Route::get('/manage-location', 'DashController@manage_location')->name('manage.location');
     Route::get('/manage-location/{id}', 'DashController@manage_location')->name('manage.location');
     Route::post('/manage-location/{id}', 'DashController@manage_location')->name('manage.location');

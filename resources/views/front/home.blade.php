@@ -8,8 +8,8 @@
           <div class="col-xs-12 frm1">
             <div class="scrollmenu">
               <a class="transport" href=""><span class="active-btn">TRANSPORT</span></a>
-              <a class="incity" href=""><span>MYBIKE</span></a>
-              <a class="outcity" href=""><span>MYCAR</span></a>
+              <a class="incity" href=""><span>MY BIKE</span></a>
+              <a class="outcity" href=""><span>MY CAR</span></a>
               <a class="rentals" href=""><span>RENTALS</span></a>
             </div>
           </div>

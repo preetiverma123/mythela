@@ -3,12 +3,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Validator;
 use DB;
 use Mail;
 use App\Role;
 use App\User;
 use DataTables;
+use Validations\Validate as Validations;
 class DashController extends Controller
 {
 	protected function validator(array $data ,$action){
@@ -96,7 +96,6 @@ class DashController extends Controller
 
 		if(role(Auth::user()['role_id'])=="customer"){
 			$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
-			// dd($vehicles);
 		}	
 		if(role(Auth::user()['role_id'])=="admin"){
 			$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
@@ -106,6 +105,7 @@ class DashController extends Controller
 	}
 
 	public function vehicle_detail(Request $request, $vehicle_id){
+		$id=decode($vehicle_id);
 		$vehicle_first = DB::connection('ogonn_ogonn')->table('photos')->where('vehicle_id', decode($vehicle_id))->join('vehicles', 'photos.vehicle_id', '=', 'vehicles.id')->join('users', 'vehicles.vendor_id', '=', 'users.id')->selectRaw('users.*, vehicles.* , photos.*')->first();
 		return view('dash/detail-vehicle', ['vehicle_first'=>$vehicle_first]);
 	}
@@ -273,6 +273,7 @@ class DashController extends Controller
 	}
 	public function detailpartner(Request $request,  $partner_id){
 		$user_id=decode($partner_id);
+		
 		$photolist="";
 		$ulist = DB::connection('ogonn_ogonn')->table('users')->where('id', $user_id)->first();
 		$photolist_1 = DB::connection('ogonn_ogonn')->table('photos')->where('vendor_id', $user_id)->first();
@@ -389,39 +390,35 @@ class DashController extends Controller
     }
 	
 	public function adminreset_password(Request $request){
-		$validations = [
-		        'password' => 'required',
-				'new_password'  	=> 'required|string|min:6|confirmed',
-		        'confirm_password'    => 'required|string|min:6',
-		    ];
-		    
-		    $validator = \Validator::make($this->data->all(), $validations,[
-		    'password.required' =>  'Current Password is required.',
-		    'new_password.required' =>  'New password is required.',
-		    'confirm_password.required' =>  'Confirm Password is required.',
-
-		    ]);
-		        if ($validator->fails()) {
-		            $this->message = $validator->errors();
+		$validation = new Validations($request);
+        $validator  = $validation->changepassword();
+        if ($validator->fails()) {
+            $this->message = $validator->errors();
         }else{
-
-		$user = User::where('id',Auth::user()->id);
-		          if ($request->password){
-		            if (Hash::check($request->password, $user->password)){
-		                if ($request->new_password == $request->confirm_password){
-		                    $input['password'] = Hash::make($request->new_password);
-		                }else{
-		                    $this->message  =  $validator->errors()->add('confirm_password', 'Confirm Password Does not match.');
-		                    return $this->populateresponse();
-		                }
-		            }else{
-		                $this->message  =  $validator->errors()->add('confirm_password', 'Current Password Does not match.');
-		                    return $this->populateresponse();
-		            }
-		        }
+		$user = User::findOrFail(Auth::user()->id);
+          if ($request->password){
+            if (Hash::check($request->password, $user->password)){
+                if ($request->new_password == $request->confirm_password){
+                    $input['password'] = Hash::make($request->new_password);
+                }else{
+                    $this->message  =  $validator->errors()->add('confirm_password', 'Confirm Password Does not match.');
+                    return $this->populateresponse();
+                }
+            }else{
+                $this->message  =  $validator->errors()->add('confirm_password', 'Current Password Does not match.');
+                    return $this->populateresponse();
+            }
+        }
         $user->update($input);
-        return redirect()->back()->with('msg', ['type'=>'success','text'=>'Admin Password has been Updated Successfully.']);
+       
+        $this->message = 'Admin Password has been Updated Successfully.';
+        $this->modal    = true;
+        $this->alert    = true;
+        $this->status = true;
+        $this->redirect = url('/');
+      
      	}
+        return $this->populateresponse();
     }
 
 	

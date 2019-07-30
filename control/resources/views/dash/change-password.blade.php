@@ -6,7 +6,7 @@
   <section class="content-header">
     <h1>
       Reset
-      <small>Reset password</small>
+      <small>Change password</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="{{url('dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -57,7 +57,7 @@
             </div>
             <div class="box-footer">
               <a href="" class="btn btn-default">Reset</a>
-              <button type="submit" class="btn btn-info pull-right" data-request="ajax-submit" data-target='[role="change_pwd"]' class="btn btn-info pull-right">SUBMIT</button>
+              <button type="button" class="btn btn-info pull-right" data-request="ajax-submit" data-target='[role="change_pwd"]' class="btn btn-info pull-right">SUBMIT</button>
             </div>
             <!-- /.box-footer -->
           </form>

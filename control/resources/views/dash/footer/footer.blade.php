@@ -8,7 +8,6 @@
 </div>
 <!-- ./wrapper -->
 <!-- jQuery 3 -->
-<script src="{{asset('dash-lib/bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('dash-lib/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- DataTables -->
@@ -20,6 +19,7 @@
 <script src="{{asset('dash-lib/bower_components/fastclick/lib/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('dash-lib/dist/js/adminlte.min.js')}}"></script>
+<script src="{{asset('js/script.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <!-- page script -->
 <script>
