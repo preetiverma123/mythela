@@ -74,6 +74,7 @@
     <!-- /.content -->
     <script>
       $(document).on(' click', '.status-action', function(event){
+        alert("hello");
           event.preventDefault();
           var act=$(this).attr('d-act');
           var user_id=$(this).attr('v-href');
@@ -86,6 +87,7 @@
           }
            status=$(this).attr('d-st');
           $.ajax({
+
             type: "put",
             url: "{{route('status')}}",
             data:{ _token:"{{csrf_token()}}", action:act, status:status, user_id:user_id},

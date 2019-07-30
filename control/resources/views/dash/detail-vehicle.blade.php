@@ -95,7 +95,7 @@
                 <th>Insurance</th>
                 <td>
                   @if(@$vehicle_first->insurance)
-                  <img src="{{'https://mythela.com/img/document-info/'.@$vehicle_first->insurance}}" width="300px">
+                  <img src="{{'https://ogonn.in/img/document-info/'.@$vehicle_first->insurance}}" width="300px">
                   @else
                   N/A
                   @endif
@@ -103,7 +103,7 @@
                 <th>Permit</th>
                 <td>
                   @if(@$vehicle_first->permit)
-                  <img src="{{'https://mythela.com/img/document-info/'.@$vehicle_first->permit}}" width="300px">
+                  <img src="{{'https://ogonn.in/img/document-info/'.@$vehicle_first->permit}}" width="300px">
                   @else
                   N/A
                   @endif
@@ -115,7 +115,7 @@
                   <th>Fitness Certificate</th>
                   <td>
                     @if(@$vehicle_first->fitness_certificate)
-                    <img src="{{'https://mythela.com/img/document-info/'.@$vehicle_first->fitness_certificate}}" width="300px">
+                    <img src="{{'https://ogonn.in/img/document-info/'.@$vehicle_first->fitness_certificate}}" width="300px">
                     @else
                     N/A
                     @endif
@@ -123,7 +123,7 @@
                   <th>Noc</th>
                   <td>
                     @if(@$vehicle_first->noc)
-                    <img src="{{'https://mythela.com/img/document-info/'.@$vehicle_first->noc}}" width="300px">
+                    <img src="{{'https://ogonn.in/img/document-info/'.@$vehicle_first->noc}}" width="300px">
                     @else
                     N/A
                     @endif
@@ -135,14 +135,14 @@
                     <th>Loan emi</th>
                     <td>
                       @if(@$vehicle_first->loan_emi_detail)
-                      <img src="{{'https://mythela.com/img/document-info/'.@$vehicle_first->loan_emi_detail}}" width="300px">
+                      <img src="{{'https://ogonn.in/img/document-info/'.@$vehicle_first->loan_emi_detail}}" width="300px">
                       @else
                       N/A
                       @endif
                     </td>
                     <th>Road Tax</th>
                     <td>@if(@$vehicle_first->road_tax_reciept)
-                      <img src="{{'https://mythela.com/img/document-info/'.@$vehicle_first->road_tax_reciept}}" width="300px">
+                      <img src="{{'https://ogonn.in/img/document-info/'.@$vehicle_first->road_tax_reciept}}" width="300px">
                       @else
                       N/A
                     @endif</td>
@@ -152,7 +152,7 @@
                     <tr>
                       <th>RC detail</th>
                       <td colspan="3">@if(@$vehicle_first->rc_detail)
-                        <img src="{{'https://mythela.com/img/document-info/'.@$vehicle_first->rc_detail}}" width="300px">
+                        <img src="{{'https://ogonn.in/img/document-info/'.@$vehicle_first->rc_detail}}" width="300px">
                         @else
                         N/A
                       @endif</td>
