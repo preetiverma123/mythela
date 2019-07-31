@@ -106,6 +106,16 @@ class BookController extends Controller
     $transactions=Transaction::where('user_id', $u_id)->orderBy('id', 'asc')->get();
     return view('front/wallet-history', ['transactions'=>$transactions]);
   }
+
+  public function complete_kyc(){
+    return view('front/complete-kyc');
+  }
+   public function donecomplete_kyc(Request $request){
+    // dd($request->all());
+    $ulist=User::where('id', Auth::user()['id'])->with('wallet')->first();
+    return view('front/complete-kyc');
+  }
+
 public function add_money(Request $request){
   $ulist=User::where('id', Auth::user()['id'])->with('wallet')->first();
   return view('front/add-money', ['ulist'=>$ulist]);

@@ -65,8 +65,8 @@ class DashController extends Controller
 		$bookings = DB::connection('ogonn_ogonn')->table('users')->join('bookings', 'users.id', '=', 'bookings.user_id')->get();
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
-	public function ongoingbooking(){
-		// print_r($_POST);die();
+	public function ongoingbooking(Request $request){
+		
 		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->get();
 		
 		return view('dash/booking', ['bookings'=>$bookings]);

@@ -182,7 +182,6 @@
     <script>
       $(document).on(' click', '.status', function(event){
         event.preventDefault();
-        alert($(this).attr('veh_id'));
         $.ajax({
           type: "put",
           url: "{{route('status')}}",

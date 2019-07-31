@@ -1,13 +1,167 @@
 @extends('layouts.app-book')
 @section('content')
 <!-- ends-->
-<div class="my-form">
+@if(!Auth::user())
+    <div class="my-form">
+          <div class="col-xs-12 frm1">
+            <div class="scrollmenu">
+              <a class="transport menu" href=""><span class="active-btn active">TRANSPORT</span></a>
+              <a class="incity menu" href=""><span>MY BIKE</span></a>
+              <a class="outcity menu" href=""><span>MY CAR</span></a>
+              <a class="rentals menu" href=""><span>RENTALS</span></a>
+            </div>
+          </div>
+          <div class="step1">
+            <form id="book-now" action="{{route('book')}}" method="get">
+              <div class="row">
+                <br/>
+                <p><br/></p>
+                <div class="frm2">
+                  <h4 class="frm1-head">Transport Logistics</h4>
+                  Anywhere in India 
+                </div>
+              </div>
+              <div class="text-left">
+                <div class="pickup row">
+                  <div class="pic-span col-xs-2">PICKUP</div>
+                  <div class="con-span col-xs-10"><input class="whenselect" name="from"  id="source_txt"  type="text" placeholder="Enter picup location"></div>
+                <input type="hidden" id="default_latitude" name="lat" placeholder="Latitude"/>
+                <input type="hidden" id="default_longitude" name="long" placeholder="Longitude"/>
+                </div>
+                <div class="drop row">
+                  <div class="pic-span col-xs-2">DROP</div>
+                  <div class="con-span col-xs-10"><input class="whenselect"  name="to" id="tosource_txt" type="text" placeholder="Enter drop location"></div>
+                  <input type="hidden" id="default_latitude_drop" name="drop_lat" placeholder="Latitude"/>
+                  <input type="hidden" id="default_longitude_drop" name="drop_long" placeholder="Longitude"/>
+                </div>
+                <div class="when row">
+                  <div class="pic-span col-xs-2">WHEN</div>
+                  <div class="con-span col-xs-10">
+                    <select class="whenselect" id="privileges"  onclick="craateUserJsObject.ShowPrivileges();">
+                      <option>Now</option>
+                      <option value="schedule">Schedule for later</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="departt row depart" style="display:none;">
+                  <div class="pic-span col-xs-2">DEPART</div>
+                  <div class="con-span col-xs-5">
+                    <select class="whenselect">
+                      <option>Today</option>
+                    </select>
+                  </div>
+                  <div class="con-span col-xs-5">
+                    <select class="whenselect">
+                      <option>12:00 AM</option>
+                      <option>12:15 AM</option>
+                    </select>
+                  </div>
+                </div>
+                <script>
+                  var Privileges = jQuery('#privileges');
+                  var select = this.value;
+                  Privileges.change(function () {
+                    if ($(this).val() == 'schedule') {
+                      $('.depart').show();
+                    }
+else $('.depart').hide(); // hide div if value is not "custom"
+});
+</script>
+</div>
+ <button class="btn btn-skin btn-block" type="submit">Book Now</button>
+</form>
+</div>
+<!-- step 1 ends -->
+<div class="step2" style="display:none;">
+  <br/><br/>
+  <div class="back"><i class="fa fa-long-arrow-left"></i></div>
+  <h4 class="frm1-head">Enter Pickup Location</h4>
+  <div class="inner-addon left-addon">
+    <i class="glyphicon glyphicon-search"></i>
+    <input type="text" id="autopickup_addr" class="height40 form-control" placeholder="Enter pickup location"/>
+  </div>
+  <div class="inner-addon left-addon">
+    <i class="glyphicon glyphicon-screenshot"></i>
+    <!--<input type="text" class="height40" placeholder="Current Location" onclick="getLocation()"/>-->
+    <button id="cur_loc" class="height40 current" >Current Location</button>
+  </div>
+  <div class="text-center powered"><img src="{{asset('img/powered-by-google-on-white.png')}}" width="100px"></div>
+  <style>
+  .inner-addon { 
+    position: relative; margin: 8px 0;
+  }
+  .powered{background-color:rgba(255,255,255,0.7);padding:10px;    border-radius: 4px;}
+  /* style icon */
+  .inner-addon .glyphicon{
+    position: absolute;
+    padding: 11px;
+    font-size: 17px;
+    pointer-events: none;
+    color:#000;
+  }
+  /* align icon */
+  .left-addon .glyphicon{ left:  0px;}
+  .right-addon .glyphicon{ right: 0px;}
+  /* add padding  */
+  .left-addon input  { padding-left:  35px; }
+  .right-addon input { padding-right: 30px; }
+  .height40{height:40px; background-color:rgba(255,255,255,0.7);width:100%;color:#000;}
+</style>
+</div>
+<!-- step 2 ends -->
+<div class="step3" style="display:none;">
+  <div class="back"><i class="fa fa-long-arrow-left"></i></div>
+  <br/><br/>
+  <h4 class="frm1-head">Enter Drop Location</h4>
+  <div class="inner-addon left-addon">
+    <i class="glyphicon glyphicon-search"></i>
+    <input type="text" id="autodrop_pickup_addr" class="height40 form-control" placeholder="Enter Drop Location" />
+  </div>
+  <div class="text-center powered"><img src="{{asset('img/powered-by-google-on-white.png')}}" width="100px"></div>
+</div>
+<!-- step 3 ends -->
+<script>
+  $(document).ready(function(){
+    $(".pickup").click(function(){ 
+      $(".step1").css("display", "none");
+      $(".step2").css("display", "block");
+      $(".step3").css("display", "none");
+    });
+    $(".drop").click(function(){
+      $(".step1").css("display", "none");
+      $(".step3").css("display", "block");
+      $(".step2").css("display", "none");
+    });
+    $(".back").click(function(){
+      $(".step1").css("display", "block");
+      $(".step2").css("display", "none");
+      $(".step3").css("display", "none");
+    });
+    $(".current").click(function(){
+      $(".step1").css("display", "block");
+      $(".step2").css("display", "none");
+      $(".step3").css("display", "none");
+    });
+
+  });
+  $(document).ready(function(){
+    $('.scrollmenu').click(function(){
+      $(this).children().removeClass("active").siblings().addClass("active");
+    });
+}); 
+</script> 
+
+</div>
+
+@else
+
+    <div class="my-form">
     <div class="row frm1">
         <div class="scrollmenu book-ul">
-            <a class="transport" div-act="step1logistic" href="javascript:void(0);"><span class="tra active-btn"><i class="fa fa-bus"></i> TRANSPORT</span></a>
-            <a class="incity" div-act="step1-incity" href="javascript:void(0);"><span class="in"><i class="fa fa-motorcycle"></i> MY BIKE</span></a>
-            <a class="outcity" div-act="outstep1" href="javascript:void(0);"><span class="out"><i class="fa fa-car"></i> MY CAR</span></a>
-            <a class="rentals" div-act="rentalstep1" href="javascript:void(0);"><span class="ren"><i class="fa fa-cab"></i> RENTALS</span></a>
+            <a class="transport" div-act="step1logistic" href="javascript:void(0);"><span class="tra active-btn"> TRANSPORT</span></a>
+            <a class="incity" div-act="step1-incity" href="javascript:void(0);"><span class="in"> MY BIKE</span></a>
+            <a class="outcity" div-act="outstep1" href="javascript:void(0);"><span class="out"> MY CAR</span></a>
+            <a class="rentals" div-act="rentalstep1" href="javascript:void(0);"><span class="ren"> RENTALS</span></a>
         </div>
     </div>
     <!--start lattitude and longitude-->
@@ -303,11 +457,11 @@
                     if ($(this).val() == 'rental-schedule') {
                         $('.rech').show();
                     }
-else $('.rech').hide(); // hide div if value is not "custom"
-});
-</script>
-</div>
-</div>
+    else $('.rech').hide(); // hide div if value is not "custom"
+    });
+    </script>
+    </div>
+    </div>
 <!-- step 1 ends -->
 <div class="rentalstep2" style="display:none;">
     <div class="back2 back2rental"><i class="fa fa-long-arrow-left"></i></div>
@@ -930,4 +1084,5 @@ else $('.logi-sch').hide(); // hide div if value is not "custom"
        } 
    });
 </script>
+@endif
 @endsection

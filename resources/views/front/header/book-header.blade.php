@@ -39,7 +39,7 @@
     </style>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-5 col-sm-12 text-center">
+            <div class="col-md-4 col-sm-12 text-center">
                 <!-- book now-->
                 <div class="row book-row">
                     <div class="col-xs-3 text-left">

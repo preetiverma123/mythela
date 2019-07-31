@@ -5,7 +5,7 @@
 .banner-bg5{background-image:url(../img/banner5.jpg);background-repeat:no-repeat;background-size:cover;color:#fff;}
 .banner-bg6{background-image:url(../img/banner6.jpg);background-repeat:no-repeat;background-size:cover;color:#fff;}
 .banner-bg7{background-image:url(../img/banner7.jpg);background-repeat:no-repeat;background-size:cover;color:#fff;}
-.right-desk{padding-left:0px;padding-right:0px;background-image:url(../img/bg/bg1.jpg);background-repeat:no-repeat;overflow-y:hidden !important;}
+.right-desk{padding-left:0px;padding-right:0px;background-image:url(../img/bg/part1.jpg);background-size:cover;background-repeat:no-repeat;overflow-y:hidden !important;}
 .right-desk2{padding-left:0px;padding-right:0px;background-image:url(../img/bg/bg7.jpg);background-size:cover;background-repeat:no-repeat;overflow-y:hidden !important;}
 .right-desk4{padding-left:0px;padding-right:0px;background-image:url(../img/bg/bg4.jpg);background-repeat:no-repeat;overflow-y:hidden !important;}
 .banner-bg{position: relative;}
@@ -28,6 +28,12 @@
     font-family: Georgia, Times, "Times New Roman", serif;
     font-style: italic;
     font-variant: normal;
+}
+.scrollmenu .menu .active{
+    color:#fff;
+    background-color:red !important;
+    padding: 3px 9px !important;
+    border-radius: 18px !important;
 }
 .movecar{
     transform: translate(180deg);

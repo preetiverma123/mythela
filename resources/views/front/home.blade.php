@@ -7,10 +7,10 @@
         <div class="my-form">
           <div class="col-xs-12 frm1">
             <div class="scrollmenu">
-              <a class="transport" href=""><span class="active-btn">TRANSPORT</span></a>
-              <a class="incity" href=""><span>MY BIKE</span></a>
-              <a class="outcity" href=""><span>MY CAR</span></a>
-              <a class="rentals" href=""><span>RENTALS</span></a>
+              <a class="transport menu" href=""><span class="active-btn active">TRANSPORT</span></a>
+              <a class="incity menu" href=""><span>MY BIKE</span></a>
+              <a class="outcity menu" href=""><span>MY CAR</span></a>
+              <a class="rentals menu" href=""><span>RENTALS</span></a>
             </div>
           </div>
           <div class="step1">
@@ -144,8 +144,15 @@ else $('.depart').hide(); // hide div if value is not "custom"
       $(".step2").css("display", "none");
       $(".step3").css("display", "none");
     });
+
   });
+  $(document).ready(function(){
+    $('.scrollmenu').click(function(){
+      $(this).children().removeClass("active").siblings().addClass("active");
+    });
+}); 
 </script> 
+
 </div>
 </div>
 </div>

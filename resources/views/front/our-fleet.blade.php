@@ -19,11 +19,11 @@
           <ul class="nav nav-tabs fleet-nav">
             <li class="active">
               <a href="#tab_default_1" data-toggle="tab">
-              INCITY </a>
+              MY BIKE </a>
             </li>
             <li>
               <a href="#tab_default_2" data-toggle="tab">
-              OUTCITY </a>
+              MY CAR </a>
             </li>
             <li>
               <a href="#tab_default_3" data-toggle="tab">
