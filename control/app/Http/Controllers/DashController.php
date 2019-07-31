@@ -8,7 +8,7 @@ use Mail;
 use App\Role;
 use App\User;
 use DataTables;
-use Validations\Validate as Validations;
+use App\Validations\Validate as Validations;
 class DashController extends Controller
 {
 	protected function validator(array $data ,$action){
@@ -390,36 +390,39 @@ class DashController extends Controller
     }
 	
 	public function adminreset_password(Request $request){
-		$validation = new Validations($request);
-        $validator  = $validation->changepassword();
-        if ($validator->fails()) {
-            $this->message = $validator->errors();
-        }else{
-		$user = User::findOrFail(Auth::user()->id);
-          if ($request->password){
-            if (Hash::check($request->password, $user->password)){
-                if ($request->new_password == $request->confirm_password){
-                    $input['password'] = Hash::make($request->new_password);
-                }else{
-                    $this->message  =  $validator->errors()->add('confirm_password', 'Confirm Password Does not match.');
-                    return $this->populateresponse();
-                }
-            }else{
-                $this->message  =  $validator->errors()->add('confirm_password', 'Current Password Does not match.');
-                    return $this->populateresponse();
-            }
-        }
-        $user->update($input);
-       
-        $this->message = 'Admin Password has been Updated Successfully.';
-        $this->modal    = true;
-        $this->alert    = true;
-        $this->status = true;
-        $this->redirect = url('/');
-      
-     	}
-        return $this->populateresponse();
-    }
+		$validations = [
+		    'password' => 'required',
+			'new_password'  	=> 'required|string|min:6|same:confirm_password',
+		    'confirm_password'    => 'required|string|min:6',
+		];
+
+		    $validator = \Validator::make($request->all(), $validations,[
+				'password.required' =>  'Current Password is required.',
+				'new_password.required' =>  'New password is required.',
+				'confirm_password.required' =>  'Confirm Password is required.',
+
+			]);
+		        if ($validator->fails()) {
+		            return back()->withErrors($validator)->withInput();
+		        }else{
+				$user = User::findOrFail(Auth::user()->id);
+		          if ($request->password){
+		            if (Hash::check($request->password, $user->password)){
+		                if ($request->new_password == $request->confirm_password){
+		                    $input['password'] = Hash::make($request->new_password);
+		                }else{
+		                    return back()->with('msg', ['type'=>'error','text'=>'Confirm Password Does not match.']);
+		                }
+		            }else{
+		                    return redirect()->back()->with('msg', ['type'=>'error','text'=>'Current Password Does not match.']);
+		            }
+		        }
+		        $user->update($input);
+		       
+		      return back()->with('msg', ['type'=>'success','text'=>'Admin Password has been Updated Successfully.']);
+		     	}
+		}
+
 
 	
 	public function manage_credit_limit(Request $request, $id=""){

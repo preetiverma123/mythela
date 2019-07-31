@@ -26,6 +26,10 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/send-money', 'BookController@send_money')->name('send.money');
     Route::get('/payment/{id}', 'BookController@payment')->name('payment');
 });
+Route::get('/logout', function () {
+    \Auth::logout();
+    return redirect('/');
+});
 /* user Auth */
 Route::get('/', function(){ return view('front/home');})->name('home');
 Route::get('/book', 'BookController@index')->name('book');

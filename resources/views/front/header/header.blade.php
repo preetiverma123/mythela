@@ -76,6 +76,8 @@
 				<li class=""><a href="{{route('our.fleet')}}">Our Fleet</a></li>
 				@if(!Auth::user()) 
 				<li><a href="{{route('login')}}">Login</a></li>
+				@else
+				<li><a href="{{route('logout')}}">Logout</a></li>
 				@endif
 				<li class="hidden-md hidden-lg"><a href="{{route('become.partner')}}">Become a Partner</a></li>
 				<li><a class="book-now" href="{{route('book')}}">BOOK NOW</a></li>
