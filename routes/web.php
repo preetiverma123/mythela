@@ -21,8 +21,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/wallet-history', 'BookController@wallet_history')->name('wallet.history');
     Route::get('/add-money', 'BookController@add_money')->name('add.money');
     Route::post('/add-money', 'BookController@add_money')->name('add.money');
-    Route::get('/complete-kyc', 'BookController@complete_kyc')->name('complete-kyc');
-    Route::post('/complete-kyc', 'BookController@donecomplete_kyc')->name('complete-kyc');
+    Route::get('/complete-kyc', 'BookController@viewkyc')->name('complete-kyc');
+    Route::post('/complete-kyc', 'BookController@complete_kyc')->name('complete-kyc');
     Route::get('/booking-detail/{booking_id}', 'BookController@booking_detail')->name('booking.detail');
     Route::get('/send-money', 'BookController@send_money')->name('send.money');
     Route::post('/send-money', 'BookController@send_money')->name('send.money');

@@ -107,10 +107,10 @@ class BookController extends Controller
     return view('front/wallet-history', ['transactions'=>$transactions]);
   }
 
-  public function complete_kyc(){
+  public function viewkyc(){
     return view('front/complete-kyc');
   }
-   public function donecomplete_kyc(Request $request){
+   public function complete_kyc(Request $request){
     // dd($request->all());
     $ulist=User::where('id', Auth::user()['id'])->with('wallet')->first();
     return view('front/complete-kyc');
