@@ -17,4 +17,7 @@ class Transaction extends Model
   public function relatedtrans(){
     return $this->hasOne('App\Booking_confirm', 'booking_id', 'booking_id');
   }
+  public function User() {
+    return $this->belongsTo('App\User');
+  }
 }

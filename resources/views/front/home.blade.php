@@ -2,7 +2,7 @@
 @section('content')
 <div class="banner-bg jumbotron">
   <div class="container text-center">
-    <div class="col-md-4">
+    <div class="col-md-5">
       <div class="row">
         <div class="my-form">
           <div class="col-xs-12 frm1">
@@ -26,20 +26,20 @@
               <div class="text-left">
                 <div class="pickup row">
                   <div class="pic-span col-xs-2">PICKUP</div>
-                  <div class="con-span col-xs-10"><input class="whenselect" name="from"  id="source_txt"  type="text" placeholder="Enter picup location"></div>
+                  <div class="con-span col-xs-10"><input class="whenselect" name="from"  id="source_txt"  type="text" placeholder="Enter picup location" required></div>
                 <input type="hidden" id="default_latitude" name="lat" placeholder="Latitude"/>
                 <input type="hidden" id="default_longitude" name="long" placeholder="Longitude"/>
                 </div>
                 <div class="drop row">
                   <div class="pic-span col-xs-2">DROP</div>
-                  <div class="con-span col-xs-10"><input class="whenselect"  name="to" id="tosource_txt" type="text" placeholder="Enter drop location"></div>
+                  <div class="con-span col-xs-10"><input class="whenselect"  name="to" id="tosource_txt" type="text" placeholder="Enter drop location" required></div>
                   <input type="hidden" id="default_latitude_drop" name="drop_lat" placeholder="Latitude"/>
                   <input type="hidden" id="default_longitude_drop" name="drop_long" placeholder="Longitude"/>
                 </div>
                 <div class="when row">
                   <div class="pic-span col-xs-2">WHEN</div>
                   <div class="con-span col-xs-10">
-                    <select class="whenselect" id="privileges"  onclick="craateUserJsObject.ShowPrivileges();">
+                    <select class="whenselect" id="privileges"  onclick="craateUserJsObject.ShowPrivileges();" required>
                       <option>Now</option>
                       <option value="schedule">Schedule for later</option>
                     </select>
@@ -66,13 +66,13 @@
                     if ($(this).val() == 'schedule') {
                       $('.depart').show();
                     }
-else $('.depart').hide(); // hide div if value is not "custom"
-});
-</script>
-</div>
- <button class="btn btn-skin btn-block" type="submit">Book Now</button>
-</form>
-</div>
+                    else $('.depart').hide(); // hide div if value is not "custom"
+                    });
+                </script>
+            </div>
+          <button class="btn btn-skin btn-block" type="submit">Book Now</button>
+    </form>
+    </div>
 <!-- step 1 ends -->
 <div class="step2" style="display:none;">
   <br/><br/>
@@ -157,7 +157,7 @@ else $('.depart').hide(); // hide div if value is not "custom"
 </div>
 </div>
 </div>
-<div class="col-md-8 hidden-xs">
+<div class="col-md-7 hidden-xs">
   <br/><br/>
   <h1>Ogonn | Book Now</h1> 
   <img src="{{asset('img/ul.png')}}" width="50%">	

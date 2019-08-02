@@ -104,6 +104,8 @@ class BookController extends Controller
   public function wallet_history(){
     $u_id=Auth::user()['id'];
     $transactions=Transaction::where('user_id', $u_id)->orderBy('id', 'asc')->get();
+    // $ulist=User::where('id', Auth::user()['id'])->with('wallet')->first();
+    // dd($ulist);
     return view('front/wallet-history', ['transactions'=>$transactions]);
   }
 
@@ -111,7 +113,6 @@ class BookController extends Controller
     return view('front/complete-kyc');
   }
    public function complete_kyc(Request $request){
-    // dd($request->all());
     $ulist=User::where('id', Auth::user()['id'])->with('wallet')->first();
     return view('front/complete-kyc');
   }

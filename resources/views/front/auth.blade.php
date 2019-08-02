@@ -2,7 +2,7 @@
 @section('content')
 <div class="row rome">
   <div class="col-xs-12">
-    <a href="{{route('book')}}"><div class="back"><i class="fa fa-long-arrow-left"></i></div></a>
+    <a href="{{route('home')}}"><div class="back"><i class="fa fa-long-arrow-left"></i></div></a>
     <h4>Login</h4>
   </div>
 </div>
@@ -25,7 +25,7 @@
   <div class="left-desk otp">
     <a href="{{route('home')}}"><img src="img/logo.gif" height="50px"></a>
     <h4 class="verify_h_1">Verify & Login</h4>
-    <p class="para">Enter the OTP sent to 8765530888</p>
+    <p class="para">Enter the OTP sent to </p>
     <p class="para-otp" style="display: none;"></p>
     <input type="hidden" value="" id="otp-hold" dir-action="">
     <input type="text" class="login-input" id="otp-enter" required="" placeholder="Enter 4 digit OTP"/>
@@ -35,12 +35,12 @@
 </form>
 <!-- signup-->
 <form id="form-signup" method="post">
+  {{csrf_field()}}
   <div class="left-desk signup">
     <a href="{{route('home')}}"><img src="img/logo.gif" height="50px"></a>
     <h4>Create Your Account</h4>
     <p class="para">Please fill the details to SignUp</p>
     <input type="text" class="login-input2" name="fullname" required="" placeholder="Enter Full Name"/>
-    {{csrf_field()}}
     <input type="hidden" id="signup_mobile" class="form-control" name="mobile"/>
     <input type="text" class="login-input email_idd" name="email" placeholder="Enter Email (Optional)" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"/>
     <button class="btn btn-skin btn-block">CONTINUE</button>
@@ -125,31 +125,32 @@
     event.preventDefault();
     $('#form-signup').hide();
     $('#otp-hold').attr('dir-action', 'signupsubmit');
+    $('#form-verify').show();
     $.ajax({
       type: "post",
       url: "{{route('sent.otp.fn')}}",
       data:{ _token:"{{csrf_token()}}", mobile:$("#mobile_no").val()},
       dataType:'json',
       success: function(response){
-        if(response.action=="verify"){
-          $('.verify_h_1').text('Verify & SignUp');
-          $('.verify_h_2').text('SIGNUP');
-          $(".para").html(response.msg);
-          $("#otp-hold").val(response.otp);
-          $('#form-verify').show();
+          if(response.action=="verify"){
+            $('.verify_h_1').text('Verify & SignUp');
+            $('.verify_h_2').text('SIGNUP');
+            $(".para").html(response.msg);
+            $("#otp-hold").val(response.otp);
+            $('#form-verify').show();
+          }
         }
-      }
     });
   });
 </script>
 <script>
      $(document).on('keyup ,keypress', '.email_idd', function(event){
-    event.preventDefault();
-      $(this).prop('required', false);
-        if($(this).val()!=""){
-         $(this).prop('required', true);
-        }
-  });
+        event.preventDefault();
+          $(this).prop('required', false);
+            if($(this).val()!=""){
+             $(this).prop('required', true);
+            }
+      });
 </script>
 <!-- ends-->
 @endsection

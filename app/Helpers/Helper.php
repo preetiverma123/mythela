@@ -3,7 +3,7 @@ use App\Role;
 use Pusher\Pusher;
 function sent_otp($number){
 	$otp=rand(2020,9987);
-	$message="Welcome %20 To %20 My %20 Thela, %20 Your %20 OTP %20 is %20 - %20".$otp."";
+	$message="Welcome %20 To %20 Ogonn %20 Your %20 OTP %20 is %20 - %20".$otp."";
 	$username="aapsworld";
 	$password="370044312";
 	$senderid="aapswo";

@@ -60,7 +60,7 @@
              <!-- item-->
              @if($transaction['wallet_id']!=null && $transaction['wallet_id_to']==null && $transaction['order_id']!=null && $transaction['booking_id']==null && $transaction['payment_method']=="online" && $transaction['status']=="paid")
              <div class="booking-history">
-              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Money debited from account</span></div>
+              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Money debited from account</span><span class="username"> To <b>{{$transaction->User->fullname}}</b></span></div>
               <div class="booking-price sub">-<i class="fa fa-inr"></i> {{$transaction['amount']}}</div>
               <br/><br/>
             </div>
@@ -68,7 +68,7 @@
 
              @if($transaction['wallet_id']!=null && $transaction['wallet_id_to']==null && $transaction['order_id']!=null && $transaction['booking_id']==null && $transaction['payment_method']=="online" && $transaction['status']=="received")
              <div class="booking-history">
-              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Money Added to wallet</span></div>
+              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Money Added to wallet</span><span class="username"> To <b>{{$transaction->User->fullname}}</b></span></div>
               <div class="booking-price add">+<i class="fa fa-inr"></i> {{$transaction['amount']}}</div>
               <br/><br/>
             </div>
@@ -76,7 +76,7 @@
 
              @if($transaction['wallet_id']!=null && $transaction['wallet_id_to']!=null && $transaction['order_id']!=null && $transaction['booking_id']==null && $transaction['payment_method']=="wallet" && $transaction['status']=="paid")
              <div class="booking-history">
-              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Wallet to wallet transfer</span></div>
+              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Wallet to wallet transfer</span><span class="username"> To <b>{{$transaction->User->fullname}}</b></span></div>
               <div class="booking-price sub">-<i class="fa fa-inr"></i> {{$transaction['amount']}}</div>
               <br/><br/>
             </div>
@@ -84,7 +84,7 @@
 
              @if($transaction['wallet_id']==null && $transaction['wallet_id_to']!=null && $transaction['order_id']!=null && $transaction['booking_id']==null && $transaction['payment_method']=="wallet" && $transaction['status']=="received")
              <div class="booking-history">
-              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Money Received from wallet</span></div>
+              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Money Received from wallet</span><span class="username"> To <b>{{$transaction->User->fullname}}</b></span></div>
               <div class="booking-price add">+<i class="fa fa-inr"></i> {{$transaction['amount']}}</div>
               <br/><br/>
             </div>
@@ -92,7 +92,7 @@
 
              @if($transaction['wallet_id']!=null && $transaction['wallet_id_to']==null && $transaction['order_id']!=null && $transaction['booking_id']!=null && $transaction['payment_method']=="wallet" && $transaction['status']=="paid")
              <div class="booking-history">
-              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Wallet paid for booking</span></div>
+              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Wallet paid for booking</span><span class="username"> To <b>{{$transaction->User->fullname}}</b></span></div>
               <div class="booking-price sub">-<i class="fa fa-inr"></i> {{$transaction['amount']}}</div>
               <br/><br/>
             </div>
@@ -100,7 +100,7 @@
 
              @if($transaction['wallet_id']==null && $transaction['wallet_id_to']==null && $transaction['order_id']==null && $transaction['booking_id']!=null && $transaction['payment_method']=="online" && $transaction['status']=="paid")
              <div class="booking-history">
-              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Online paid for booking</span></div>
+              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Online paid for booking</span><span class="username"> To <b>{{$transaction->User->fullname}}</b></span></div>
               <div class="booking-price sub">-<i class="fa fa-inr"></i> {{$transaction['amount']}}</div>
               <br/><br/>
             </div>
@@ -108,7 +108,7 @@
 
              @if($transaction['wallet_id']==null && $transaction['wallet_id_to']==null && $transaction['order_id']!=null && $transaction['booking_id']!=null && $transaction['payment_method']=="cash" && $transaction['status']=="paid")
              <div class="booking-history">
-              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Cash paid for booking</span></div>
+              <div class="booking-date">{{date('d-m-Y h:i a', strtotime($transaction['created_at']))}} <br/><span class="vehicle-name">Cash paid for booking</span><span class="username"> To <b>{{$transaction->User->fullname}}</b></span></div>
               <div class="booking-price sub">-<i class="fa fa-inr"></i> {{$transaction['amount']}}</div>
               <br/><br/>
             </div>

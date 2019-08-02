@@ -29,6 +29,9 @@
     font-style: italic;
     font-variant: normal;
 }
+.username{
+    font-size: 11px;
+}
 .scrollmenu .menu .active{
     color:#fff;
     background-color:red !important;
