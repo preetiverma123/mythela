@@ -184,7 +184,6 @@
       url: "{{route('status')}}",
       data:{ _token:"{{csrf_token()}}", 'user_id':$(this).attr('u-id'), docs_id:$(this).attr('docs_id'), action:$(this).attr('val-act'), status:$(this).attr('val')},
       success: function(response){
-        // window.location.href = "{{url('dashboard/manage-partners')}}";
         location.reload();
       }
     });

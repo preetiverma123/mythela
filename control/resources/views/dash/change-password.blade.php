@@ -1,6 +1,9 @@
 @extends('layouts.app-dash')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
+<style type="text/css">
+  .error-help{color:red;font-size:12px;}
+</style>
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -34,21 +37,21 @@
                     <label for="inputPassword1" class="col-sm-3 control-label">Old Password</label>
                     <div class="col-sm-9">
                       <input type="password" name="password" class="form-control" placeholder="Enter old password" >
-                      {{ $errors->first('password') }}
+                      <div class="error-help">{{ $errors->first('password') }}</div>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="inputPassword2" class="col-sm-3 control-label">New Password</label>
                     <div class="col-sm-9">
                       <input type="password" name="new_password" class="form-control" placeholder="Enter New Password" >
-                      {{ $errors->first('new_password') }}
+                      <div class="error-help">{{ $errors->first('new_password') }}</div>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="inputPassword3" class="col-sm-3 control-label">Confirm Password</label>
                     <div class="col-sm-9">
                       <input type="password" name="confirm_password" class="form-control" placeholder="Re-Enter New Password" >
-                      {{ $errors->first('confirm_password') }}
+                      <div class="error-help">{{ $errors->first('confirm_password') }}</div>
                     </div>
                   </div>
                 </div>
@@ -67,7 +70,7 @@
       <!-- /.box -->
     </div>
     <!-- /.col -->
-  </div>
+  
   <!-- /.row -->
 </section>
 <!-- /.content -->

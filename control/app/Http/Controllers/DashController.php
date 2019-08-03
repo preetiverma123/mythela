@@ -56,9 +56,9 @@ class DashController extends Controller
 	}
 	public function index(){
 		$bookings = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` WHERE created_at >= ( CURDATE() - INTERVAL 7 DAY )');
-		$booking_o = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.status="ongoing"');
-		$booking_c = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.status="completed"');
-		$booking_cancel = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.status="cancelled"');
+		$booking_o = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.statuss="ongoing"');
+		$booking_c = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.statuss="completed"');
+		$booking_cancel = DB::connection('ogonn_ogonn')->select('SELECT count(*) as total FROM `bookings` INNER JOIN `booking_confirms` ON bookings.id=booking_confirms.booking_id WHERE booking_confirms.statuss="cancelled"');
 		return view('dash/dashboard', ['bookings'=>$bookings, 'ongoing'=>$booking_o, 'completed'=>$booking_c, 'cancelled'=>$booking_cancel]);
 	}
 	public function allbooking(){
@@ -67,16 +67,16 @@ class DashController extends Controller
 	}
 	public function ongoingbooking(Request $request){
 		
-		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->get();
+		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('statuss','ongoing')->get();
 		
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function completedbooking(){
-		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->get(); 
+		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('statuss','completed')->get(); 
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function cancelledbooking(){
-		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->get(); 
+		$bookings = DB::connection('ogonn_ogonn')->table('bookings')->join('booking_confirms', 'bookings.id', '=', 'booking_confirms.booking_id')->where('statuss','cancelled')->get(); 
 		return view('dash/booking', ['bookings'=>$bookings]);
 	}
 	public function managecustomer(){
@@ -100,7 +100,6 @@ class DashController extends Controller
 		if(role(Auth::user()['role_id'])=="admin"){
 			$vehicles = DB::connection('ogonn_ogonn')->table('vehicles')->join('users', 'vehicles.vendor_id', '=', 'users.id')->select('vehicles.*')->get();
 		}
-		// $vehicles = [];
 		return view('dash/manage-vehicles', ['vehicles' => $vehicles]);
 	}
 

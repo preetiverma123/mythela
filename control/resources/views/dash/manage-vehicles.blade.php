@@ -10,7 +10,7 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="{{url('dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Manage Vehicles</a></li>
+      <li><a href="javascript:void(0);">Manage Vehicles</a></li>
       <li class="active"> Vehicles</li>
     </ol>
   </section>

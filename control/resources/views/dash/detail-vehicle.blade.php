@@ -10,7 +10,7 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="{{url('dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#"> Manage Vehicle</a></li>
+      <li><a href="{{url('dashboard/manage-vehicle')}}"> Manage Vehicle</a></li>
       <li class="active"> Vehicle Detail</li>
     </ol>
   </section>
@@ -180,7 +180,7 @@
     </section>
     <!-- /.content -->
     <script>
-      $(document).on(' click', '.status', function(event){
+      $(document).on('click', '.status', function(event){
         event.preventDefault();
         $.ajax({
           type: "put",

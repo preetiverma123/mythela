@@ -75,20 +75,20 @@ class BookController extends Controller
   }
   public function get_booking(Request $request){
     $list_id=Booking::where('user_id', Auth::user()['id'])->pluck('id')->toArray();
-    $ulist_id=Booking_confirm::whereIn('booking_id', $list_id)->where('status', 'ongoing')->pluck('booking_id')->toArray();
+    $ulist_id=Booking_confirm::whereIn('booking_id', $list_id)->where('statuss', 'ongoing')->pluck('booking_id')->toArray();
     $listdata=Booking::whereNotIn('id', $ulist_id)->where('user_id', Auth::user()['id'])->with(['userInfo','driverInfo'])->get();
     return view('front/bidding-result', ['bookings'=>$listdata]);
   }
   public function get_bidding(Request $request, $booking_id){
-    $list=Booking_confirm::where(['booking_id'=>decode($booking_id), 'status'=>'pending'])->with(['userInfo', 'bookingInfo'])->orderBy('id', 'desc')->get();
+    $list=Booking_confirm::where(['booking_id'=>decode($booking_id), 'statuss'=>'pending'])->with(['userInfo', 'bookingInfo'])->orderBy('id', 'desc')->get();
     return view('front/bidding-info', ['biddings'=>$list]);
   }
   
   public function confirm_booking(Request $request, $bidding_id){
     if($request->isMethod('post')){
       $list_getb=Booking_confirm::where('id', decode($bidding_id))->first();
-      Booking_confirm::where('booking_id', $list_getb['id'])->update(['status'=>'expired']);
-      $booking=Booking_confirm::where('id', decode($bidding_id))->update(['status'=>'ongoing']);
+      Booking_confirm::where('booking_id', $list_getb['id'])->update(['statuss'=>'expired']);
+      $booking=Booking_confirm::where('id', decode($bidding_id))->update(['statuss'=>'ongoing']);
       _pusher_('success');
       return redirect()->route('my.booking');
     }
@@ -96,7 +96,7 @@ class BookController extends Controller
     return view('front/booking-confirm', ['booking'=>$booking]);
   }
   public function my_booking(){
-    $bookings=Booking_confirm::whereIn('status', ['ongoing', 'completed', 'running'])->with('bookingInfo')->whereHas('bookingInfo', function($q){
+    $bookings=Booking_confirm::whereIn('statuss', ['ongoing', 'completed', 'running'])->with('bookingInfo')->whereHas('bookingInfo', function($q){
       $q->where('user_id', '=', Auth::user()['id']);
     })->with(['vehicleInfo'])->get();
     return view('front/my-booking', ['bookings'=>$bookings]);
@@ -135,7 +135,7 @@ public function payment(Request $request, $payment_id){
 }
 
 public function booking_detail(Request $request, $booking_id){
-  $booking=Booking_confirm::where(['booking_id'=>decode($booking_id), 'status'=>'ongoing'])->with(['driverInfo', 'bookingInfo'])->first();
+  $booking=Booking_confirm::where(['booking_id'=>decode($booking_id), 'statuss'=>'ongoing'])->with(['driverInfo', 'bookingInfo'])->first();
   return view('front/booking-detail', ['booking'=>$booking]);
 }
 public function profile(){

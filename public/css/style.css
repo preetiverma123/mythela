@@ -292,7 +292,7 @@ footer { background: #393939;color: rgba(255, 255, 255, 0.8);padding:20px 0 10px
 
 .active-btn{background-color:#DF1719;color:#fff;padding:3px 9px;border-radius:18px;}
 
-.frm1-head{font-size:22px;}
+.frm1-head{font-size:22px;color: black;}
 .material-ul li{width:32.6%;height:78px;max-height:78px;border:1px solid #ccc;padding:2px;background-color:#fff;margin-bottom: 5px;font-size:12px;}
 .material-ul li:hover{border:1px solid red;}
 .material-ul li img{margin-left:auto;margin-right:auto;}
