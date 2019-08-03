@@ -27,6 +27,7 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'], function(){
     Route::get('/view-detail/{booking_id}', 'DashController@view_detail')->name('view.detail');
     Route::get('/manage-customers', 'DashController@managecustomer')->name('manage.customers');
     Route::get('/detail-partner/{partner_id}', 'DashController@detailpartner')->name('detail.partner');
+    Route::get('/with-vehicle', 'DashController@with_vehicle')->name('with.vehicle');
     Route::get('/reset-password', 'DashController@reset_password')->name('reset.password');
     Route::post('/reset-password', 'DashController@adminreset_password')->name('reset.password');
     Route::get('/manage-partners', 'DashController@managepartner')->name('manage.partners');
